@@ -448,7 +448,7 @@
 
 <style lang="less">
   .p_main-left {
-    width: calc(63.45432% - 14px);
+    width: calc(63.45432% - 14px) !important;
     padding: 0;
     .main_header {
       background: #272938;

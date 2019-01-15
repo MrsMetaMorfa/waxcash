@@ -60,8 +60,8 @@
 
 <style lang="less">
   .p_main-right {
-    width: 36.54568%;
-    min-width: 500px;
+    width: 36.54568% !important;
+    min-width: 500px !important;
     margin-left: 14px;
     flex-direction: column;
   }
