@@ -1,13 +1,11 @@
 <template>
   <div class="wrapper">
-    <Header/>
     <!-- <nuxt/> - основной контент страницы -->
     <nuxt/>
   </div>
 </template>
 
 <script>
-    import Header from '~/components/Header.vue'
 
     export default {
         head: {
@@ -15,9 +13,7 @@
                 {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i'}
             ]
         },
-        components: {
-            Header
-        }
+        components: {}
     }
 </script>
 
@@ -252,8 +248,8 @@
   body {
     background: #0c0d10;
     width: 100%;
-    margin: 0;
-    padding: 0;
+    margin: -1px 0 0;
+    padding: 1px 0 0;
     min-height: 100vh;
     color: white;
     overflow-x: hidden;

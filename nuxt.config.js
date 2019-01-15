@@ -34,6 +34,12 @@ module.exports = {
         })
       }
     }
-  }
-}
+  },
+  /*
+  ** Plugins
+  */
+  plugins: [
+    '~/plugins/vuescroll'
+  ]
+};
 

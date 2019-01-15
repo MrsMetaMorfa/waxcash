@@ -1,5 +1,5 @@
 <template>
-  <form class="block p_main-right">
+  <form class="block p_main-right container container--justify">
     <div class="block_total">
       <p>Вы получите: <span class="total">11500.47 Р</span></p>
       <p class="small">Теперь выберите платежную систему и введите данные для получения средств на кошелек</p>
@@ -60,16 +60,17 @@
 
 <style lang="less">
   .p_main-right {
-    width: 584px;
+    width: 36.54568%;
+    min-width: 500px;
     margin-left: 14px;
+    flex-direction: column;
   }
   .block_total {
     border-radius: 9px;
-    background: rgb(39, 41, 56) url("~assets/images/total-bg.jpg") no-repeat center;
-    background-size: 100%;
+    background: rgb(39, 41, 56) url("~assets/images/total-bg.jpg") no-repeat right bottom;
+    background-size: auto 100%;
     width: 100%;
     height: 143px;
-    margin-bottom: 14px;
     position: relative;
     padding: 20px 114px 14px 14px;
     p {
@@ -78,6 +79,7 @@
       margin-bottom: 14px;
       font-weight: 700;
       display: flex;
+      flex-wrap: wrap;
       .total {
         font-size: 34px;
         color: rgb(56, 215, 90);
@@ -85,6 +87,7 @@
         text-shadow: 0px 7px 8px rgba(0, 0, 0, 0.3);
         display: inline-block;
         margin-left: auto;
+        white-space: nowrap;
       }
       &.small {
         font-size: 16px;
@@ -130,13 +133,13 @@
           max-height: 100%;
         }
       }
-      input:checked + label {
+      input:checked + label, label:hover {
         background-image: linear-gradient(to right, rgba(8, 174, 234, 0.4), rgba(42, 245, 152, 0.4));
       }
     }
   }
   .block_info {
-    padding: 14px 0;
+    padding: 0;
   .line {
     label {
       display: block;
@@ -170,7 +173,7 @@
       width: 100%;
       border-radius: 2px;
       background-color: rgb(39, 41, 56);
-      padding: 10px 14px;
+      padding: 12px 14px;
       line-height: 1.75;
       color: white;
       position: relative;
@@ -183,7 +186,7 @@
     }
     .hint {
       text-align: center;
-      margin-top: 14px;
+      margin-top: 29px;
       line-height: 1.4;
     }
     .warning {
@@ -203,6 +206,127 @@
       background-color: rgb(56, 223, 90);
       font-size: 25px;
       font-weight: 700;
+    }
+  }
+  @media screen and (max-width: 1825px) {
+    .block_total p {
+      font-size: 23px;
+      .total {
+        font-size: 29px;
+      }
+    }
+  }
+  @media screen and (max-width: 1825px) {
+    .p_main-right {
+      min-width: 400px;
+      .block_total {
+        height: auto;
+        p {
+          .total {
+            margin-right: auto;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 1072px) {
+    .p_main-right {
+      width: 100%;
+      margin-left: 0;
+      margin-top: 14px;
+      flex-wrap: wrap;
+      height: 510px;
+      .block_total, .block_payment {
+        width: 50%;
+        margin: auto 29px auto 0;
+      }
+      .block_info, .btn-submit {
+        width: calc(50% - 29px);
+        .hint {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .p_main-right {
+      height: 600px;
+      .block_total, .block_payment {
+        width: calc(50% - 29px);
+        .system {
+          width: 50%;
+        }
+      }
+      .block_info, .btn-submit {
+        width: 50%;
+        margin: auto 0;
+      }
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .p_main-right {
+      flex-direction: row;
+      height: auto;
+      .block_payment {
+        width: 100%;
+        margin-right: 0;
+        margin-top: 14px;
+        .system {
+          width: calc(100%/3);
+        }
+      }
+      .block_total {
+        width: 100%;
+        margin-right: 0;
+        background-size: 100% 100%;
+      }
+      .block_info, .btn-submit {
+        width: 100%;
+        margin-top: 14px;
+      }
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .p_main-right {
+      min-width: auto;
+      .block_payment {
+        .system {
+          width: calc(100%/2);
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 420px) {
+    .p_main-right {
+      min-width: auto;
+      .block_total {
+        p {
+          .total {
+            margin-right: 0;
+          }
+          &.small {
+            padding-right: 124px;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 380px) {
+    .p_main-right {
+      .block_total {
+        padding-bottom: 160px;
+        padding-right: 14px;
+        p {
+          &.small {
+            padding-right: 0;
+          }
+        }
+      }
+      .block_payment {
+        .system {
+          width: 100%;
+        }
+      }
     }
   }
 </style>

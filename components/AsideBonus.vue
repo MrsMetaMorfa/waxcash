@@ -156,5 +156,110 @@
       padding: 14px;
     }
   }
+
+  @media screen and (max-width: 1499px) {
+    .aside_bonus {
+      margin: 0 14px 0 0 !important;
+      display: flex;
+      flex-direction: column;
+      height: 374px;
+      max-height: 500px;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 75%;
+      .bonus_monets, .block-level {
+        width: calc(33%);
+        margin-right: 29px;
+      }
+      .bonus_system {
+        width: calc(66% - 29px);
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+          li {
+            width: 50%;
+            min-width: 240px;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 1160px) {
+    .aside_bonus {
+      width: 66%;
+      height: 428px;
+      .bonus_monets, .block-level {
+        width: calc(45%);
+      }
+      .bonus_monets {
+        margin-top: auto;
+      }
+      .block-level {
+        margin-bottom: auto;
+      }
+      .bonus_system {
+        width: calc(55% - 29px);
+        ul {
+          li {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 900px) {
+    .aside_bonus {
+      width: 100%;
+      margin: 0 0 14px!important;
+      height: 320px;
+      .bonus_system {
+        width: 66%;
+        ul {
+          li {
+            width: 50%;
+            min-width: auto;
+          }
+        }
+      }
+      .bonus_monets, .block-level {
+        width: calc(34% - 29px);
+      }
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .aside_bonus {
+      height: auto;
+      flex-direction: row;
+      .bonus_system {
+        width: 100%;
+        ul {
+          li {
+            width: 50%;
+            min-width: auto;
+          }
+        }
+      }
+      .bonus_monets, .block-level {
+        width: calc(50% - 29px);
+        margin: 0 auto 14px;
+      }
+    }
+  }
+  @media screen and (max-width: 530px) {
+    .aside_bonus {
+      max-height: none;
+      .bonus_system {
+        ul {
+          li {
+            width: 100%;
+          }
+        }
+      }
+      .bonus_monets, .block-level {
+        width: 100%;
+        margin: 0 auto 14px;
+      }
+    }
+  }
 </style>
 
