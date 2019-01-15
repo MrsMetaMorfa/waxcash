@@ -60,10 +60,11 @@
 
 <style lang="less">
   .p_main-right {
-    width: 36.54568% !important;
-    min-width: 500px !important;
+    width: 36.54568%;
+    min-width: 500px;
     margin-left: 14px;
     flex-direction: column;
+    padding: 29px;
   }
   .block_total {
     border-radius: 9px;

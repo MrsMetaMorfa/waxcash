@@ -53,11 +53,13 @@
   .block {
     border-radius: 2px;
     background-color: rgb(22, 23, 31);
-    width: 100%;
-    padding: 29px;
     &:not(:last-of-type) {
       margin-bottom: 14px;
     }
+  }
+  .aside_bonus {
+    width: 100%;
+    padding: 29px;
   }
   .bonus_monets {
     align-items: center;
@@ -186,7 +188,7 @@
   }
   @media screen and (max-width: 1160px) {
     .aside_bonus {
-      width: 66%;
+      width: calc(67% - 29px);
       height: 428px;
       .bonus_monets, .block-level {
         width: calc(45%);

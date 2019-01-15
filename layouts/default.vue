@@ -228,6 +228,16 @@
     font-weight: 600;
     font-style: italic;
   }
+  @font-face {
+    font-family: 'MarkPro';
+    src: url('~assets/fonts/Mark-Bold.eot');
+    src: local('Mark-Bold'), local('Mark-Bold'),
+    url('~assets/fonts/Mark-Bold.eot?#iefix') format('embedded-opentype'),
+    url('~assets/fonts/Mark-Bold.woff') format('woff'),
+    url('~assets/fonts/Mark-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
 
   html {
     font-family: "SF UI Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;

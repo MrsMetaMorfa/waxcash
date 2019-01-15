@@ -80,6 +80,8 @@
     .p_main {
       flex-direction: column;
     }
+  }
+  @media screen and (max-width: 900px) {
     .content_right {
       flex-direction: column;
     }
@@ -95,4 +97,5 @@
     }
   }
 </style>
+
 
