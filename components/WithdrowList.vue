@@ -119,10 +119,17 @@
     background-color: rgb(22, 23, 31);
     width: 100%;
     overflow-x: hidden;
-    padding-bottom: 5px!important;
-    height: auto!important;
-    .__vuescroll .__rail-is-horizontal {
+    height: 71px!important;
+    &.__vuescroll .__rail-is-horizontal {
       bottom: 0!important;
+    }
+    &.__vuescroll .__panel.__native{
+      height: calc(100% + 17px);
+      margin-bottom: -17px;
+      padding-bottom: 17px;
+      .container {
+        padding-bottom: 5px;
+      }
     }
     ul {
       padding: 0;

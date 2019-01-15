@@ -254,6 +254,10 @@
     margin: 0;
     transition: all 0.25s ease-in;
   }
+  *::selection {
+    color: inherit;
+    background: rgba(0,0,0,0.05);
+  }
 
   body {
     background: #0c0d10;

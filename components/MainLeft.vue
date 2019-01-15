@@ -572,9 +572,9 @@
       overflow-y: hidden;
       position: relative;
       .__vuescroll {
-        padding-right: 14px!important;
-        width: calc(100% + 14px) !important;
+        width: calc(100% + 28px) !important;
         margin-right: -14px;
+        margin-left: -14px;
         max-height: calc(820px - 58px);
         height: auto!important;
         .container {
@@ -588,7 +588,11 @@
           right: 0!important;
         }
         .__panel.__native {
-          width: 100%;
+          width: calc(100% + 17px);
+          padding: 0 17px 0 0;
+          .container {
+            padding: 0 14px;
+          }
         }
       }
       .card {
@@ -627,8 +631,31 @@
           }
         }
         .block-selected {
-          display: none;
-        }
+          visibility: hidden;
+          opacity: 0;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          border: 2px solid transparent;
+          border-radius: 2px;
+          background: rgba(39,41,56,.85);
+          border-image: linear-gradient(-128deg, #08aeea 0%, #2af598 100%);
+          border-image-slice: 1;
+          transition: all 0.3s ease-out;
+          svg {
+            height: 30px;
+            margin-bottom: 14px;
+            path {
+              fill: white;
+            }
+          }        }
         &.sale {
           background: url("~assets/images/card-bg-sale.jpg") no-repeat center;
           background-size: cover;
@@ -677,28 +704,8 @@
         }
         &.selected {
           .block-selected {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            border: 2px solid transparent;
-            border-radius: 2px;
-            background: rgba(39,41,56,.85);
-            border-image: linear-gradient(-128deg, #08aeea 0%, #2af598 100%);
-            border-image-slice: 1;
-            svg {
-              height: 30px;
-              margin-bottom: 14px;
-              path {
-                fill: white;
-              }
-            }
+            visibility: visible;
+            opacity: 1;
           }
         }
       }
@@ -1075,19 +1082,6 @@
                 width: 206px;
                 height: 126px;
               }
-            }
-          }
-        }
-      }
-    }
-  }
-  @media screen and (max-width: 340px) {
-    .p_main-left {
-      .main_body {
-        .__vuescroll {
-          .container {
-            .card {
-              width: calc(100% - 14px);
             }
           }
         }
