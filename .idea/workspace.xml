@@ -2,22 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebf11985-8bbd-4e97-983a-8a85862aeb7a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/images/video-preview.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/youtube.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plugins/vuescroll.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/icons/clothes.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/icons/clothes.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/AsideBonus.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/AsideBonus.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/AsideNews.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/AsideNews.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/Header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/MainLeft.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/MainLeft.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/MainRight.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/MainRight.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/WithdrowList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/WithdrowList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/default.vue" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/default.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nuxt.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,6 +25,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="1" />
+          <entry key="gitignore" value="1" />
           <entry key="js" value="7" />
           <entry key="json" value="1" />
           <entry key="md" value="3" />
@@ -52,6 +39,7 @@
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="7" />
           <entry key="Markdown" value="3" />
+          <entry key="PLAIN_TEXT" value="1" />
           <entry key="SVG" value="31" />
           <entry key="Vue.js" value="47" />
         </counts>
@@ -63,6 +51,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="gitignore" value="7" />
           <entry key="js" value="69" />
           <entry key="svg" value="92" />
           <entry key="vue" value="16788" />
@@ -71,6 +60,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JavaScript" value="69" />
+          <entry key="PLAIN_TEXT" value="7" />
           <entry key="SVG" value="92" />
           <entry key="Vue.js" value="16788" />
         </counts>
@@ -106,7 +96,7 @@
         <entry file="file://$PROJECT_DIR$/pages/index.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="298">
-              <caret line="38" column="24" lean-forward="true" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
+              <caret line="38" column="24" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
               <folding>
                 <element signature="e#441#485#0" expanded="true" />
                 <element signature="e#883#965#0" />
@@ -129,14 +119,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/index-loggedin-new.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="43" column="3" lean-forward="true" selection-start-line="43" selection-start-column="3" selection-end-line="43" selection-end-column="3" />
+            <state relative-caret-position="-30">
+              <caret line="43" column="3" selection-start-line="43" selection-start-column="3" selection-end-line="43" selection-end-column="3" />
               <folding>
                 <element signature="e#508#552#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -181,6 +180,7 @@
         <option value="$PROJECT_DIR$/pages/index.vue" />
         <option value="$PROJECT_DIR$/pages/index-loggedin.vue" />
         <option value="$PROJECT_DIR$/pages/index-loggedin-new.vue" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -219,26 +219,6 @@
             <path>
               <item name="waxcash" type="b2602c69:ProjectViewProjectNode" />
               <item name="waxcash" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="waxcash" type="b2602c69:ProjectViewProjectNode" />
-              <item name="waxcash" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="waxcash" type="b2602c69:ProjectViewProjectNode" />
-              <item name="waxcash" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="waxcash" type="b2602c69:ProjectViewProjectNode" />
-              <item name="waxcash" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="waxcash" type="b2602c69:ProjectViewProjectNode" />
-              <item name="waxcash" type="462c0819:PsiDirectoryNode" />
-              <item name="plugins" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -286,12 +266,12 @@
       <updated>1547042307708</updated>
       <workItem from="1547042309876" duration="1127000" />
       <workItem from="1547115850590" duration="41189000" />
-      <workItem from="1547446646147" duration="37631000" />
+      <workItem from="1547446646147" duration="38053000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79947000" />
+    <option name="totallyTimeSpent" value="80369000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -321,7 +301,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.02153846" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.47692308" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -616,7 +596,7 @@
     <entry file="file://$PROJECT_DIR$/pages/index.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="298">
-          <caret line="38" column="24" lean-forward="true" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
+          <caret line="38" column="24" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
           <folding>
             <element signature="e#441#485#0" expanded="true" />
             <element signature="e#883#965#0" />
@@ -638,11 +618,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/index-loggedin-new.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="43" column="3" lean-forward="true" selection-start-line="43" selection-start-column="3" selection-end-line="43" selection-end-column="3" />
+        <state relative-caret-position="-30">
+          <caret line="43" column="3" selection-start-line="43" selection-start-column="3" selection-end-line="43" selection-end-column="3" />
           <folding>
             <element signature="e#508#552#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
         </state>
       </provider>
     </entry>
