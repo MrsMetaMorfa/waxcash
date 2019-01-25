@@ -285,8 +285,64 @@
     margin: 0;
   }
   .wrapper {
-    max-width: 1920px;
+    max-width: 4096px;
     margin: 0 auto;
+  }
+  .p_container {
+    margin-top: 80px;
+    min-height: calc(100vh - 80px);
+    padding: 14px;
+  }
+  .block {
+    border-radius: 2px;
+    background-color: rgb(22, 23, 31);
+    &_light {
+      border-radius: 2px;
+      background-color: rgb(39, 41, 56);
+    }
+  }
+  .btn {
+    color: inherit;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+  }
+  .angle {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    border: solid #777D97;
+    border-width: 0 1px 1px 0;
+    transform: rotate(45deg);
+  }
+  .btn-huge {
+    border-radius: 2px;
+    background-color: rgb(56, 215, 90);
+    padding: 14px;
+    text-transform: uppercase;
+    width: 222px;
+    height: 41px;
+    align-items: center;
+    justify-content: center;
+    img {
+      margin-left: 14px;
+      height: 21px;
+    }
+  }
+  .btn-bright {
+    border-radius: 3px;
+    background-color: #5499E8;
+    padding: 9px 29px 5px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 18px;
+    height: auto;
+    &:hover, &:focus {
+      background: #16171F;
+    }
   }
 </style>
 

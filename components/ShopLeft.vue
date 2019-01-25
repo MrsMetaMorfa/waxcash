@@ -1,5 +1,5 @@
 <template>
-  <main class="block p_main-left">
+  <main class="block p_shop-left">
     <div class="main_header container container--justify">
       <ul class="sorting container">
         <li class="active">
@@ -53,84 +53,48 @@
       </div>
     </div>
     <div class="main_body container" >
-      <div class="notification" v-show="!(loggedIn)">
-        <p>Для начала работы вам нужно</p>
-        <button class="btn btn-huge container">Войти через
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 570.6 149.1">
-            <path d="M45.6,144.8C25.8,134.2,8.9,120,3.1,108.9L0,103V19.3l4.3-3.2a109.8,109.8,0,0,1,26-13.4C37.5.2,39.3,0,53.1,0S69,.3,75.3,2.2c8.3,2.6,21.5,9.3,28.2,14.2l4.6,3.4v82.5l-2.3,4.8c-4.4,9.3-14.3,19.1-29,29-7.1,4.7-21.6,13-22.7,13a89.6,89.6,0,0,1-8.5-4.3Zm17.7-9.3C82.1,124.7,95,113.4,100,103.2l2.8-5.7.3-36.3.3-36.3L97.7,21C78.9,7.7,57.6,3,38.1,7.6c-8,1.9-22.3,8.7-28.7,13.6L4.8,24.7,5,61.6c.3,36.8.3,36.9,2.7,41.7s14.8,18,24.4,24.5c7,4.6,20.8,12.6,22,12.6s4.4-2.2,9.2-4.9Zm-14.5-9.3c-9.7-5.4-16.6-10.4-23.3-17.1C14.6,98.2,15,99.8,14.7,63.5l-.3-31.1,6.1-4.1c22-15,45.3-14.8,68.1.4l6.1,4.1-.3,30.9c-.3,30.3-.3,31-2.5,35.1-3,5.6-9.9,12.9-17.1,18.1s-18.9,12-20.2,11.9-3.2-1.2-5.8-2.6Zm8.2-31c0-3.7.1-3.8,4.3-4.9a19.7,19.7,0,0,0,8-4.4c3.3-3,3.6-3.7,3.6-8.6s-.4-5.7-2.8-8.2a29,29,0,0,0-8-5.1L57,61.9V50.4l3.6.6a60,60,0,0,1,6.1,1.2c2.2.5,2.6.1,4.1-3.6s1.5-4.2,1.3-4.3S60.4,41,58.7,41,57,40.2,57,38s-.3-2.9-2.7-2.6-2.7.9-3,2.9S50.4,41.1,47,42c-15.5,4.2-15.5,20.7,0,26.7l4.2,1.5v6.2c0,4.3-.4,6.1-1.2,6.1S41.6,80.6,36.4,79c-1.4-.5-1.6.1-1.6,3.9s.1,4.6,3.4,6a38.8,38.8,0,0,0,8.3,2l4.7.6v3.7c0,3.5.1,3.7,2.9,3.7s2.9-.2,2.9-3.7Zm0-17.5c0-5.2.7-5.9,3.2-3.1s2,5.5-.8,6.8S57,82.4,57,77.7ZM48.5,57.9c-2.7-1.9-2.8-4.9-.1-6.3s2.9-.9,2.6,3.8S50.7,59.4,48.5,57.9Zm100.1,43.6c-16.5-4.7-25.4-22.2-22.3-44.3,1.5-10.1,4.7-16.8,10.9-22.4s12.3-7.7,23-7.1c7.1.3,9.2.8,13.6,3.3,6.1,3.4,11.3,9.8,14,17,1.5,4.1,1.9,7.6,1.9,17.6,0,11.8-.2,13-2.7,18.5A32.6,32.6,0,0,1,171.4,100c-5.9,2.6-16.5,3.3-22.8,1.5Zm16.4-15c4.5-3.2,6.3-8.4,6.7-19.4s-.8-17.3-5.1-22.1c-3-3.2-3.7-3.5-8.7-3.5s-5.7.4-8.2,2.9c-8.2,8.2-7.4,37.5,1.2,42.1,5.4,2.9,9.9,2.9,14.1,0Zm120.5,15.3c-12.3-3.1-20.9-12.1-21-21.9,0-2.1.4-2.2,8.6-2.2h8.6l1.3,4.1c1.6,4.9,5.8,7.5,12.3,7.5,3.3,0,4.7-.6,7.1-2.9,5.3-5.4,1.9-10.5-9.7-14.5-14.5-5-21.1-9.6-24.3-16.7a16.2,16.2,0,0,1-.1-14.7c3.9-8.6,13.1-13,27-13,7.2,0,9.2.4,14.2,2.8s10,6.9,11.9,12.5,2.1,7-7.8,6.7-8.9-.4-9.5-2.6c-1.9-8.2-18.1-7.9-19.1.3-.5,4,2.8,6.8,12,10.2,20.1,7.2,26.3,13.8,25.3,26.5s-9.5,17.9-24.7,18.5A57.8,57.8,0,0,1,285.5,101.8Zm234.3,0c-10.3-2.5-18.8-10.9-20.3-20l-.6-4.1h9.3c8.7,0,9.3.1,9.3,2a9.7,9.7,0,0,0,5.9,8.5c10,3.5,19.2-2.2,15.2-9.5-1.6-2.8-4.9-4.7-16.1-8.8-8.8-3.3-14.9-7.5-18.3-12.4-1.7-2.6-2.2-4.6-2.2-9.7s.4-7,2.9-10.5c4.6-6.3,11.1-9.1,22.4-9.6s16.7,1,22.4,5.8c4.1,3.3,7.3,9.3,7.4,13.5v2.7h-8.5c-8.5,0-8.5,0-9.5-2.8-3.3-8.7-19.2-7.9-19.2.9,0,4.2,2.9,6.2,14.8,10.5,9.7,3.4,15,6.9,19.1,12.2,2.5,3.3,2.8,4.4,2.8,11.5s-.3,8.2-2.8,11.6c-4.2,5.5-11.4,8.4-21.7,8.8a60.8,60.8,0,0,1-12.3-.6ZM199.9,65.1V28.3l20,.3c22.3.4,24.2.9,30.8,7.7,9.8,10.2,8.3,27.7-2.8,35.3-5.6,3.7-11.8,5.1-22.5,5.1h-8.2v25.1H199.9ZM236.3,60c2.2-2.2,2.7-3.5,2.7-7.5s-.4-5.2-3.2-7.7S232.1,42,224.9,42h-7.7V63.4l8.2-.3c7.4-.3,8.4-.6,10.9-3.1Zm94.9,5.1V28.5h18.3V59.7l10.7-15.6,10.6-15.6H382c8.8,0,11,.2,10.2,1.2-10.8,14-23.4,30.6-23.4,31s5.4,9.4,12.1,20.3,12,20.1,12,20.4-4.6.4-10.4.4H372.1l-7.7-13.5-7.7-13.4-3.6,3.5-3.6,3.5v19.9H331.2Zm67.5,0V28.5h18.4v73.3H398.7Zm30,0V28.4l9.3.3,9.3.2,12.2,21.5c6.7,11.8,12.5,21.4,12.9,21.5s.7-9.8.7-21.7V28.5h17.4v73.3H472.6L460,79.6,447.5,57.5l-.3,22.2-.2,22.1H428.7V65.1ZM560.1,25a8.3,8.3,0,0,0-1.3-4.1c-.9-.9-.5-1.1,1.7-1.1s2.4.3,1.7.7-1.3,2.2-1.5,4.1-.4,3.3-.6.4Zm3.9-1.4c-.1-4,0-4.2,1.3-2.4a6.3,6.3,0,0,1,1.4,2.7c0,.4.5.5,1,.2s1,.1,1,.9c0,2.4-1.8,2.6-2.6.3l-.7-2.2-.7,2.5c-.5,1.9-.7,1.5-.7-2Zm5.3.8c-.4-1.7-.2-3.5.3-4s1,.3,1,3C570.6,28.3,570.1,28.6,569.3,24.4Z"/>
-          </svg>
-        </button>
-      </div>
-      <div class="guide" v-show="loggedIn && loggedFirst">
-        <form action="" class="container container--justify">
-          <div class="column">
-            <div class="line container container--justify">
-              <label for="link">Ваш OPskins Trade URL:</label>
-              <a href="#">Нажмите чтобы найти Trade URL</a>
-            </div>
-            <div class="line container container--justify">
-              <input type="text" name="link" id="link" placeholder="Введите ссылку на обмен...">
-            </div>
-          </div>
-          <div class="column">
-            <button class="btn btn-huge" type="submit">Подтвердить</button>
-          </div>
-        </form>
-        <div class="block block_light">
-          <button class="btn btn-close" type="button">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 139.9">
-              <title>Close</title>
-              <path d="M3.4,136.6C-.4,132.8-1,129,1.6,125c.9-1.4,13.4-14.3,27.8-28.8L55.5,70,29.4,43.7C15,29.3,2.5,16.4,1.6,15-1,11-.4,7.2,3.4,3.4S11-1,15,1.6c1.4.9,14.3,13.4,28.7,27.8L70,55.5,96.2,29.4C110.7,15,123.6,2.5,125,1.6c4-2.6,7.8-2,11.6,1.8S141,11,138.4,15,21.2,133.6,16.6,137.1s-8.9,3.8-13.2-.5Zm120,.5c-4.6-3.4-34.4-33.4-36.8-37.1s-2-7.8,1.8-11.6S96,84,100,86.6s33.7,32.2,37.1,36.8,3.8,8.9-.5,13.2-7.9,4.4-13.2.5Z"/>
-            </svg>
-          </button>
-          <div class="container">
-            <div class="video">
-              <iframe src="" frameborder="0"></iframe>
-              <a href="#" class="video_link">
-                <picture>
-                  <source srcset="~assets/images/video-preview.jpg" type="image/jpeg">
-                  <img src="~assets/images/video-preview.jpg" alt="">
-                </picture>
-              </a>
-              <button class="video_button" type="button" aria-label="Запустить видео">
-                <img src="~assets/images/youtube.png" alt="Запустить видео">
-              </button>
-            </div>
-            <div class="description">
-              <h2>Гайд по работе с сайтом waxcash.net</h2>
-              <p>Если у вас возникли вопросы касательно процедуры покупки или
-                продажи предметов на нашем сайте - посмотрите это видео. В
-                нем мы постарались максимально подробно показать весь
-                процесс от начала до конца.</p>
-              <button class="btn btn-bright" type="button">СМОТРЕТЬ</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--Cards-->
       <vue-scroll :ops="ops">
         <div class="container">
-            <Card
-                v-for="product in products"
-                :key="product.index"
-                :loggedFirst="loggedFirst"
-                :productTypeVGO="product.productTypeVGO"
-                :productTypeWears="product.productTypeWears"
-                :productTypeShoes="product.productTypeShoes"
-                :productTypeElectronics="product.productTypeElectronics"
-                :productTypeStickers="product.productTypeStickers"
-                :productSale="product.productSale"
-                :productSaleSize="product.productSaleSize"
-                :class="{
-                    shoes: product.productTypeShoes,
-                    electronics: product.productTypeElectronics,
-                    sale: product.productSale,
-                    high_price: product.productHighPrice,
-                    selected: product.productSelected
-                 }"
-            />
+          <Card
+                  v-for="product in products"
+                  :key="product.index"
+                  :loggedFirst="loggedFirst"
+                  :productTypeVGO="product.productTypeVGO"
+                  :productTypeWears="product.productTypeWears"
+                  :productTypeShoes="product.productTypeShoes"
+                  :productTypeElectronics="product.productTypeElectronics"
+                  :productTypeStickers="product.productTypeStickers"
+                  :productSale="product.productSale"
+                  :productSaleSize="product.productSaleSize"
+                  :class="{
+                      shoes: product.productTypeShoes,
+                      electronics: product.productTypeElectronics,
+                      sale: product.productSale,
+                      high_price: product.productHighPrice,
+                      selected: product.productSelected
+                   }"
+          />
         </div>
       </vue-scroll>
+      <div class="pagination container">
+        <div class="pagination_prev container">
+          <button class="btn btn-page" type="button">Первая</button>
+          <button class="btn btn-page" type="button">&lt;</button>
+        </div>
+        <button class="btn btn-page" type="button">1</button>
+        <button class="btn btn-page current" type="button">2</button>
+        <button class="btn btn-page" type="button">3</button>
+        <button class="btn btn-page" type="button">4</button>
+        <button class="btn btn-page disabled" type="button">...</button>
+        <button class="btn btn-page" type="button">12</button>
+        <button class="btn btn-page" type="button">13</button>
+        <button class="btn btn-page" type="button">14</button>
+        <button class="btn btn-page" type="button">15</button>
+        <div class="pagination_next container">
+          <button class="btn btn-page" type="button">&gt;</button>
+          <button class="btn btn-page" type="button">Последняя</button>
+        </div>
+      </div>
     </div>
   </main>
 </template>
@@ -400,8 +364,9 @@ export default {
 </script>
 
 <style lang="less">
-  .p_main-left {
-    width: calc(63.45432% - 14px);
+  .p_shop-left {
+    width: calc(69.1332% - 14px);
+    height: 100%;
     padding: 0;
     .main_header {
       background: #272938;
@@ -490,23 +455,20 @@ export default {
       }
     }
     .main_body {
+      background: #16171f;
       padding: 29px 14px;
       flex-wrap: wrap;
       height: calc(100% - 64px);
-      min-height: 558px;
-      //max-height: 820px;
       overflow-y: hidden;
       position: relative;
+      > .container {
+        flex-wrap: wrap;
+      }
       .__vuescroll {
         width: calc(100% + 28px) !important;
-        height: auto!important;
         margin-right: -14px;
         margin-left: -14px;
-        .__view {
-          > .container {
-            position: absolute;
-          }
-        }
+        height: calc(100% - 65px) !important;
         .container {
           justify-content: flex-start;
           flex-wrap: wrap;
@@ -525,262 +487,156 @@ export default {
           }
         }
       }
-      .notification {
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        z-index: 100;
-        width: 100%;
-        height: 100%;
-        background: rgba(22,23,31,.9);
-        p {
-          font-size: 29px;
-        }
-        .btn-huge {
-          margin-top: 14px;
-          font-size: 29px;
-          line-height: 47px;
-          font-weight: 700;
-          width: auto;
-          height: auto;
-          padding: 14px 29px;
-          svg {
-            height: 43px;
-            margin-left: 10px;
-            margin-top: 3px;
-            path {
-              fill: white;
-            }
-          }
-        }
+    }
+  }
+  .pagination {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top: 15px;
+    .btn {
+      border-radius: 2px;
+      background: #272938;
+      padding: 10px;
+      line-height: 16px;
+      margin-left: 7px;
+      margin-right: 7px;
+      color: #777d97;
+      margin-top: 14px;
+      min-width: 36px;
+      display: block;
+      &:hover, &:focus {
+        background: #0A0B0E;
       }
-      .guide {
-        width: 100%;
-        .block {
-          position: relative;
-          padding: 29px;
-        }
-        .btn-close {
-          position: absolute;
-          top: 14px;
-          right: 14px;
-          width: 14px;
-          height: 14px;
-          svg {
-            width: 100%;
-            path {
-              fill: white;
-            }
-          }
-        }
-        form {
-          margin-bottom: 29px;
-          .column {
-            &:first-child {
-              width: calc(100% - 240px);
-              margin-right: 29px;
-            }
-            &:last-child {
-              width: 211px;
-              margin-top: auto;
-              .btn-huge {
-                width: 100%;
-                margin-bottom: 14px;
-                font-size: 20px;
-                font-weight: 700;
-                line-height: 20px;
-                height: auto;
-              }
-            }
-            .line {
-              margin-bottom: 14px;
-              a {
-                display: inline-block;
-                text-decoration: none;
-                border-bottom: 1px solid;
-                color: #5499e8;
-                &:hover, &:focus {
-                  border-bottom-color: transparent;
-                }
-              }
-              input {
-                display: block;
-                width: 100%;
-                border-radius: 2px;
-                background-color: rgb(39, 41, 56);
-                padding: 12px 14px;
-                line-height: 1.75;
-                color: white;
-                position: relative;
-                z-index: 1;
-                border: 2px solid transparent;
-                &:hover, &:focus {
-                  border-image: linear-gradient(to right, rgba(8, 174, 234, 1) 0%, rgba(42, 245, 152, 1) 100%);
-                  border-image-slice: 1;
-                }
-              }
-            }
-          }
-        }
-        .video {
-          width: 332px;
-          height: 187px;
-          margin-right: 58px;
-          position: relative;
-          border-radius: 3px;
-          overflow: hidden;
-          iframe, .video_link {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-          }
-          .video_link {
-            display: block;
-            z-index: 10;
-          }
-          .video_button {
-            display: block;
-            cursor: pointer;
-            padding: 0;
-            background: transparent;
-            border: 0;
-            border-radius: 0;
-            margin: 0;
-            position: absolute;
-            z-index: 20;
-            width: 79px;
-            height: 55px;
-            top: 50%;
-            left: 50%;
-            margin-left: -39.5px;
-            margin-top: -27.5px;
-
-          }
-        }
-        .description {
-          width: calc(100% - 390px);
-          h2 {
-            font-size: 20px;
-            font-weight: 500;
-            margin-bottom: 14px;
-          }
-          p {
-            color: #737992;
-            margin-bottom: 14px;
-          }
+      &.current {
+        background: #5499E8;
+        color: white;
+      }
+      &.disabled {
+        cursor: not-allowed;
+        &:hover, &:focus {
+          background: #272938;
         }
       }
     }
   }
   .card {
-    width: calc(100%/10 - 14px);
+    width: calc((100%/12) - 14px);
   }
   @media screen and (max-width: 3660px) {
-    .card {
-      width: calc(100%/9 - 14px);
-    }
+      .card {
+          width: calc(100%/11 - 14px);
+      }
   }
   @media screen and (max-width: 3225px) {
-    .card {
-      width: calc(100%/8 - 14px);
-    }
+      .card {
+          width: calc(100%/10 - 14px);
+      }
   }
   @media screen and (max-width: 2790px) {
-    .card {
-      width: calc(100%/7 - 14px);
-    }
+      .card {
+          width: calc(100%/9 - 14px);
+      }
   }
   @media screen and (max-width: 2355px) {
-    .card {
-      width: calc(100%/6 - 14px);
-    }
+      .card {
+          width: calc(100%/8 - 14px);
+      }
   }
   @media screen and (max-width: 1920px) {
-    .card {
-      width: calc(100%/5 - 14px);
-    }
+      .card {
+          width: calc(100%/7 - 14px);
+      }
   }
   @media screen and (max-width: 1640px) {
+    .p_shop-left {
+      width: calc(100% - 514px);
+    }
     .card {
-      width: calc(100%/5 - 14px);
-    }
-    .p_main-left {
-      width: calc(100% - 594px);
+      width: calc((100%/6) - 14px);
     }
   }
-  @media screen and (max-width: 1400px) {
-    .card {
-      width: calc(100%/4 - 14px);
-    }
-  }
-  @media screen and (max-width: 1360px) {
-    .p_main-left {
-      width: calc(56.45646% - 14px);
-      min-width: 704px;
-      .main_header {
-        padding-right: 14px;
-        padding-left: 14px;
-      }
-    }
-  }
-  @media screen and (max-width: 1146px) {
-    .p_main-left {
-      width: 100%;
-    }
+  @media screen and (max-width: 1499px) {
     .card {
       width: calc((100%/5) - 14px);
     }
   }
-  @media screen and (max-width: 810px) {
-    .card {
-      width: calc((100%/4) - 14px);
-    }
-    .p_main-left {
-      .main_body {
-        .guide {
-          form, .block .container {
-            flex-direction: column;
-          }
-          form {
-            .column {
-              &:first-child {
-                width: 100%;
-                margin: 0 0 14px;
-              }
-              &:last-child {
-                width: 50%;
-                min-width: 280px;
-                margin: 0 auto;
-              }
-            }
-          }
-          .block .container {
-            .video {
-              margin: 0 auto 14px;
-            }
-            .description {
-              width: 100%;
-              margin: 0;
-            }
-          }
+  @media screen and (max-width: 1400px) {
+    .p_shop-left {
+      .main_header {
+        padding-right: 14px;
+        padding-left: 14px;
+        flex-wrap: wrap-reverse;
+        ul {
+          margin-top: 14px;
+        }
+        .sorting_buttons {
+          margin-left: auto;
         }
       }
-      .main_header {
-        min-width: auto;
+        .main_body .__vuescroll {
+            height: calc(100% - 115px) !important;
+            max-height: 500px;
+        }
+    }
+    .pagination {
+      &_next, &_prev {
+        width: 50%;
+        order: -1;
+      }
+      &_prev {
+        justify-content: flex-end;
       }
     }
   }
-  @media screen and (max-width: 750px) {
-    .p_main-left {
-      min-width: auto;
+  @media screen and (max-width: 1200px) {
+    .p_shop-left .main_body {
+      height: calc(100% - 96px);
+    }
+    .card {
+      width: calc(100%/4 - 14px);
+    }
+  }
+  @media screen and (max-width: 1146px) {
+    .p_shop-left {
+      width: 100%;
+      .main_body .__vuescroll {
+        height: auto!important;
+      }
+    }
+    .pagination {
+      &_next, &_prev {
+        width: auto;
+      }
+      &_next {
+        order: 10;
+      }
+    }
+    .card {
+      width: calc((100%/6) - 14px);
+    }
+  }
+  @media screen and (max-width: 960px) {
+    .card {
+      width: calc((100%/5) - 14px);
+    }
+    .pagination {
+      &_next, &_prev {
+        width: 50%;
+      }
+      &_next {
+        order: -1;
+      }
+    }
+
+  }
+  @media screen and (max-width: 767px) {
+    .card {
+      width: calc((100%/4) - 14px);
+    }
+  }
+  @media screen and (max-width: 680px) {
+    .p_shop-left {
       .main_header {
         flex-wrap: wrap;
         .sorting {
@@ -796,98 +652,36 @@ export default {
       }
     }
   }
-  @media screen and (max-width: 680px) {
+  @media screen and (max-width: 560px) {
     .card {
-      width: calc(100%/3 - 14px);
-    }
-  }
-  @media screen and (max-width: 520px) {
-    .p_main-left {
-      .main_body {
-        .guide {
-          form {
-            .column {
-              .line {
-                flex-direction: column-reverse;
-                a {
-                  margin-left: auto;
-                  margin-bottom: 14px;
-                }
-              }
-              .btn-huge {
-                width: 280px !important;
-                max-width: 100%;
-                min-width: 0!important;
-              }
-            }
-          }
-          .block {
-            .container {
-              margin-top: 14px;
-              .video {
-                width: 269px;
-                height: 152px;
-                img {
-                  max-width: 100%;
-                  max-height: 100%;
-                }
-              }
-            }
-          }
-        }
-      }
+      width: calc((100%/3) - 14px);
     }
   }
   @media screen and (max-width: 480px) {
-    .p_main-left {
+    .p_shop-left {
       .main_header {
         flex-direction: column-reverse;
         .sorting {
           margin-bottom: 0;
         }
         .sorting_buttons {
-          margin-bottom: 14px;
-        }
-      }
-      .main_body {
-        .notification {
-          p {
-            text-align: center;
-          }
-          .btn-huge {
-            flex-direction: column;
-            img {
-              margin-top: 14px;
-              margin-right: auto;
-              margin-left: auto;
-            }
-          }
+          margin-top: 0;
         }
       }
     }
     .card {
       width: calc(100%/2 - 14px);
     }
-  }
-  @media screen and (max-width: 400px) {
-    .p_main-left {
-      .main_body {
-        .guide {
-          width: 100%;
-          form .column:last-child {
-            min-width: 0;
-          }
-          .block {
-            .container {
-              .video {
-                width: 206px;
-                height: 126px;
-              }
-            }
-          }
-        }
+    .pagination {
+      &_next, &_prev {
+        width: 100%;
+        justify-content: center;
+      }
+      &_next {
+        order: 10;
       }
     }
+
   }
 </style>
 

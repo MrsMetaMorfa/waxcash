@@ -59,6 +59,8 @@
   .aside_news {
     width: 100%;
     padding: 29px;
+    height: calc(50% - 14px);
+    min-height: 375px;
     ul {
       padding: 0;
       list-style-type: none;
@@ -101,20 +103,29 @@
       }
     }
   }
-  @media screen and (max-width: 1499px) {
+  @media screen and (max-width: 2048px) {
+    .aside_news {
+      height: calc(100% - 584px);
+    }
+  }
+  @media screen and (max-width: 1824px) {
     .aside_news {
       width: 25%;
+      height: 100%;
     }
   }
   @media screen and (max-width: 1160px) {
     .aside_news {
       width: 33%;
+      height: 428px;
     }
   }
   @media screen and (max-width: 900px) {
     .aside_news {
       width: 100%;
       margin: 0;
+      height: auto;
+      min-height: auto;
       ul {
         display: flex;
         flex-wrap: wrap;

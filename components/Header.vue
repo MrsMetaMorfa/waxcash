@@ -75,37 +75,6 @@
 </script>
 
 <style lang="less">
-  .btn {
-    color: inherit;
-    border: none;
-    border-radius: 0;
-    background: transparent;
-    padding: 0;
-    cursor: pointer;
-  }
-  .angle {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    margin: 5px;
-    border: solid #777D97;
-    border-width: 0 1px 1px 0;
-    transform: rotate(45deg);
-  }
-  .btn-huge {
-    border-radius: 2px;
-    background-color: rgb(56, 215, 90);
-    padding: 14px;
-    text-transform: uppercase;
-    width: 222px;
-    height: 41px;
-    align-items: center;
-    justify-content: center;
-    img {
-      margin-left: 14px;
-      height: 21px;
-    }
-  }
 
   .p_header {
     background: #1A1C27;

@@ -60,6 +60,8 @@
   .aside_bonus {
     width: 100%;
     padding: 29px;
+    height: 50%;
+    min-height: 570px;
   }
   .bonus_monets {
     align-items: center;
@@ -159,12 +161,13 @@
     }
   }
 
-  @media screen and (max-width: 1499px) {
+  @media screen and (max-width: 1824px) {
     .aside_bonus {
       margin: 0 14px 0 0 !important;
       display: flex;
       flex-direction: column;
-      height: 374px;
+      height: 375px;
+      min-height: 0;
       max-height: 500px;
       flex-wrap: wrap;
       justify-content: center;

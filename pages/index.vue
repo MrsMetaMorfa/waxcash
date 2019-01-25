@@ -45,23 +45,20 @@
 </script>
 
 <style lang="less">
-  .p_container {
-    margin-top: 80px;
-    min-height: calc(100vh - 80px);
-    padding: 14px;
-  }
   .content_left {
-    width: calc(100% - 294px);
+    width: calc(85% - 14px);
   }
   .content_right {
-    width: 280px;
+    width: 15%;
+    min-width: 280px;
     margin-left: 14px;
   }
   .p_main {
     margin-top: 14px;
+    height: calc(100% - 85px);
   }
 
-  @media screen and (max-width: 1499px) {
+  @media screen and (max-width: 1824px) {
     .p_container {
       flex-direction: column;
       .content_left {
@@ -76,7 +73,7 @@
       }
     }
   }
-  @media screen and (max-width: 1072px) {
+  @media screen and (max-width: 1146px) {
     .p_main {
       flex-direction: column;
     }
