@@ -32,17 +32,17 @@
       </div>
     </div>
     <div class="block_info">
-      <div class="line">
+      <div class="line form_line">
         <label for="email">Ваш email:</label>
         <div class="input_wrapper">
           <input type="email" name="email" id="email" placeholder="verner2k@example.com"></div>
       </div>
-      <div class="line">
+      <div class="line form_line">
         <label for="purse">Ваш Кошелек:</label>
-        <div class="input_wrapper current">
+        <div class="input_wrapper correct">
           <input type="text" name="purse" id="purse" value="XXXX XXXX XXXX XXXX"></div>
       </div>
-      <div class="line">
+      <div class="line form_line">
         <label for="user">ФИО:</label>
         <div class="input_wrapper">
           <input type="text" name="user" id="user" placeholder="Вернер Давид Матвеевич"></div>
@@ -53,7 +53,7 @@
       </div>
     </div>
     <div class="btn-submit">
-      <button type="submit" class="btn">Продать</button>
+      <button type="submit" class="btn btn-huge">Продать</button>
     </div>
   </form>
 </template>
@@ -142,50 +142,8 @@
   .block_info {
     padding: 0;
     margin-top: 29px;
+  }
   .line {
-    label {
-      display: block;
-      margin-bottom: 14px;
-    }
-    .input_wrapper {
-      position: relative;
-      margin-bottom: 14px;
-      &.current {
-        input {
-          padding-right: 30px;
-        }
-        &:after {
-          content: url("~assets/images/check.png");
-          display: block;
-          border-radius: 50%;
-          background-color: rgba(56, 223, 90, 0.149);
-          position: absolute;
-          width: 20px;
-          height: 20px;
-          color: rgb(56, 223, 90);
-          top: 12px;
-          right: 16px;
-          z-index: 1;
-          text-align: center;
-        }
-      }
-    }
-    input {
-      display: block;
-      width: 100%;
-      border-radius: 2px;
-      background-color: rgb(39, 41, 56);
-      padding: 12px 14px;
-      line-height: 1.75;
-      color: white;
-      position: relative;
-      z-index: 1;
-      border: 2px solid transparent;
-      &:hover, &:focus {
-        border-image: linear-gradient(to right, rgba(8, 174, 234, 1) 0%, rgba(42, 245, 152, 1) 100%);
-        border-image-slice: 1;
-      }
-    }
     .hint {
       text-align: center;
       margin-top: 29px;
@@ -197,16 +155,11 @@
       line-height: 1.4;
     }
   }
-  }
   .btn-submit {
     margin-top: 29px;
     .btn {
       width: 100%;
       display: block;
-      padding: 14px;
-      text-transform: uppercase;
-      border-radius: 2px;
-      background-color: rgb(56, 223, 90);
       font-size: 25px;
       font-weight: 700;
     }
