@@ -33,9 +33,6 @@
 </script>
 
 <style lang="less">
-  .p_container {
-  }
-
   @media screen and (max-width: 1824px) {
   }
   @media screen and (max-width: 1146px) {

@@ -266,7 +266,7 @@
     width: 100%;
     margin: -1px 0 0;
     padding: 1px 0 0;
-    height: 100vh;
+    min-height: 100vh;
     color: white;
     overflow-x: hidden;
   }

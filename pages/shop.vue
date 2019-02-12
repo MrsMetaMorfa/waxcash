@@ -40,16 +40,12 @@
 
 <style lang="less">
   .p_container {
-    height: calc(100vh - 80px);
     padding: 14px;
     .p_main {
       height: 100%;
     }
   }
   @media screen and (max-width: 1146px) {
-    .p_container {
-        height: auto;
-    }
     .p_main {
       flex-wrap: wrap;
       height:  auto!important;
