@@ -1,16 +1,45 @@
 <template>
   <header class="p_header container container--justify wrapper">
+    <button class="btn open-menu"
+            onclick="document.querySelector('.mobile-nav').classList.toggle('open');
+            document.querySelector('.p_header').classList.toggle('translated');
+            document.querySelector('.p_container').classList.toggle('translated');">
+      <span>Открыть меню</span>
+      <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 45 31">
+        <defs>
+          <filter filterUnits="userSpaceOnUse" id="Filter_0" x="0px" y="0px" width="45px" height="31px"  >
+            <feOffset in="SourceAlpha" dx="0" dy="6" />
+            <feGaussianBlur result="blurOut" stdDeviation="2.646" />
+            <feFlood flood-color="rgb(0, 0, 0)" result="floodOut" />
+            <feComposite operator="atop" in="floodOut" in2="blurOut" />
+            <feComponentTransfer><feFuncA type="linear" slope="0.25"/></feComponentTransfer>
+            <feMerge>
+              <feMergeNode/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+
+        </defs>
+        <g>
+          <path fill-rule="evenodd"
+                d="M6.000,10.000 L6.000,8.000 L38.000,8.000 L38.000,10.000 L6.000,10.000 ZM6.000,-0.000 L28.000,-0.000 L28.000,2.000 L6.000,2.000 L6.000,-0.000 ZM32.000,18.000 L6.000,18.000 L6.000,16.000 L32.000,16.000 L32.000,18.000 Z"/>
+        </g>
+      </svg>
+    </button>
     <nav class="header_nav container">
       <h1 class="p_logo"><nuxt-link to="/">Waxcash</nuxt-link></h1>
-      <button class="btn open-menu" onclick="document.querySelector('.header_nav-list').classList.toggle('open'); this.classList.toggle('active');">
-        <span>Открыть меню</span>
-      </button>
       <ul class="container header_nav-list">
         <li><nuxt-link to='/'>Продажа</nuxt-link></li>
-        <li><nuxt-link to='/'>Магазин</nuxt-link></li>
+        <li><nuxt-link to='/shop'>Магазин</nuxt-link></li>
         <li><nuxt-link to='/'>Отзывы</nuxt-link></li>
-        <li><nuxt-link to='/'>Помощь</nuxt-link></li>
-        <li class="glowing"><nuxt-link to='/'>Реферальная система</nuxt-link></li>
+        <li><button class="btn" type="button"
+                    onclick="document.querySelector('.modals').classList.add('active');
+                    document.querySelector('#modalHelp').classList.add('active');"
+        >Помощь</button></li>
+        <li class="glowing"><nuxt-link to='/referral'>Реферальная система</nuxt-link></li>
       </ul>
     </nav>
     <div class="header_user container">
@@ -32,7 +61,10 @@
       </div>
       <div class="user_balance container" v-show="loggedIn">
         <p>Баланс: <span class="sum">350.08 Р</span></p>
-        <button class="btn">Пополнить</button>
+        <button class="btn"
+                onclick="document.querySelector('.modals').classList.add('active');
+                document.querySelector('#modalRefill').classList.add('active');"
+        >Пополнить</button>
       </div>
       <div class="user_profile container" v-show="loggedIn">
         <div class="avatar">
@@ -48,7 +80,70 @@
             Выход
           </button>
         </div>
-        <span class="angle"></span>
+        <button class="btn open-profile-menu" type="button" onclick="this.classList.toggle('open')">
+          <span class="angle">Открыть меню</span>
+        </button>
+        <ul class="profile_menu block_light">
+          <li><nuxt-link to='/profile'>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 179.3 179.5">
+              <title>profile</title>
+              <path d="M3.4,176.1c-1.9-1.9-3.4-4.1-3.4-5s9.8-69,10.6-72a10.3,10.3,0,0,1,2.7-4.4c2.7-2.5,34-15.2,37.4-15.2s9.3,6,9.3,9.8c0,5.5-3.8,8.5-18,14.2-7.1,2.9-13,5.3-13,5.4l-3.5,23.9c-1.9,13-3.5,24.3-3.5,25.2s7.8,1.5,68,1.5c64.5,0,68-.1,68-1.8,0-4.1-6.9-47.5-7.7-48.1s-3.9-1.7-7.8-2.8l-17.4-5.4-10.5-3.2L105.1,89l-9.6-9.2-7.8-.6c-15-1.1-26.8-9-33.5-22.5-3.5-7.2-3.7-8.1-3.7-17.1s.3-10.2,3.2-16.3C58.1,14,63.7,8.2,72.8,3.7,80,.2,80.9,0,90,0s10,.2,17.2,3.7c9.1,4.5,14.7,10.3,19.1,19.6,2.9,6.1,3.2,7.6,3.2,16.2s-.3,10.1-3.1,16.1a54.5,54.5,0,0,1-7,10.8l-3.7,4.2,5.4,5.3c5.4,5.3,5.5,5.4,24.4,11.1,11.4,3.4,19.9,6.5,21.2,7.7s3,4,8.9,44.1c5.1,34.8,5.1,35.7-.5,39-2.7,1.6-9.7,1.7-85.6,1.7H6.8ZM101,56.1c5.9-3.9,8.5-8.9,8.5-16.6s-2.6-12.7-8.8-16.8-15.3-3.9-21-.3a20.7,20.7,0,0,0-8.8,22.9c1.4,5.1,7.5,11.7,12.3,13.1s13.5.6,17.8-2.3Z"/>
+            </svg>
+            Профиль</nuxt-link></li>
+          <li><nuxt-link to='/accumulation'>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 200">
+              <title>cards</title>
+              <path d="M40.1,178.6C15.8,164.8,2.2,156.4,1.3,154.9A10.1,10.1,0,0,1,10.2,140c1.2,0,17.2,8.5,35.5,19S79.4,178,80,178s15.9-8.6,34.2-19,34.3-19,35.5-19c5.3,0,10.3,4.8,10.3,9.9s-1.7,6.8-40,28.6C98.8,190.6,81.3,200,79.9,200s-18.8-9.4-39.8-21.4Zm0-50C15.8,114.8,2.2,106.4,1.3,104.9A10.1,10.1,0,0,1,10.2,90c1.2,0,17.2,8.5,35.5,19S79.4,128,80,128s15.9-8.6,34.2-19,34.3-19,35.5-19c5.3,0,10.3,4.8,10.3,9.9s-1.7,6.8-40,28.6C98.8,140.6,81.3,150,79.9,150s-18.8-9.4-39.8-21.4Zm1.4-49.1C21.7,68.2,4.2,57.6,2.7,56q-5.4-6,0-12c4-4.3,42.5-26,46.2-26s9.2,4.6,9.3,9.2a11.6,11.6,0,0,1-1.5,6c-.9,1.4-7,5.6-13.7,9.3S31,49.6,31,50,78.6,78,80,78s49-27.2,49-28-12.8-7.9-28.4-16.8C72,16.9,70,15.3,70,10S74.9,0,80.2,0c3.1,0,73.6,40.3,77,44a10,10,0,0,1,2.8,6,10,10,0,0,1-2.8,6c-3.6,3.9-74,44-77.2,44-1.5,0-18.2-8.9-38.5-20.5Z"/>
+            </svg>
+            Накопления</nuxt-link></li>
+          <li><nuxt-link to='/partnership'>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 160">
+              <title>partnership_new</title>
+              <path d="M3.4,156.6,0,153.2V27.3l2.9-3.9C6.2,19,21.2,4.1,25,1.6,27.2.2,34.4,0,100,0s72.8.2,75,1.6c3.8,2.5,18.8,17.4,22.1,21.8l2.9,3.9V153.2l-3.4,3.4-3.4,3.4h-28c-26.9,0-28-.1-30.6-2.1s-6.2-9.1-11.7-20L114,120H86l-2,4c-2.8,5.4-7.1,7.6-12.1,6.1-7.7-2.3-8.8-8.4-3.4-19S73.4,100,100,100c21.6,0,22.9.1,25.4,2.1s6.2,9.1,11.7,20L146,140h34V34.4l-7.3-7.2L165.5,20H34.4l-7.2,7.3L20,34.5V140H63.2l3.4,3.4c4.6,4.6,4.6,8.6,0,13.2L63.2,160H6.8Zm50-70c-3.2-3.2-3.4-3.8-3.4-10V70H43.4c-6.2,0-6.8-.2-10-3.4s-4.6-8.6,0-13.2,3.8-3.4,10-3.4H50V43.4c0-6.2.2-6.8,3.4-10S57.7,30,60,30s4.1,1,6.6,3.4,3.4,3.8,3.4,10V50h6.6c6.2,0,6.8.2,10,3.4s4.6,8.6,0,13.2S82.8,70,76.6,70H70v6.6c0,6.2-.2,6.8-3.4,10S62.3,90,60,90s-4.1-.9-6.6-3.4Zm80,0c-4.6-4.6-4.6-8.6,0-13.2,2.4-2.4,4.3-3.4,6.6-3.4,4.4,0,10,5.6,10,10s-5.6,10-10,10C137.7,90,135.8,89.1,133.4,86.6Zm-20-20c-4.6-4.6-4.6-8.6,0-13.2,2.4-2.4,4.3-3.4,6.6-3.4,4.4,0,10,5.6,10,10s-5.6,10-10,10C117.7,70,115.8,69.1,113.4,66.6Zm40,0c-4.6-4.6-4.6-8.6,0-13.2,2.4-2.4,4.3-3.4,6.6-3.4,4.4,0,10,5.6,10,10s-5.6,10-10,10C157.7,70,155.8,69.1,153.4,66.6Zm-20-20c-4.6-4.6-4.6-8.6,0-13.2,2.4-2.4,4.3-3.4,6.6-3.4,4.4,0,10,5.6,10,10s-5.6,10-10,10C137.7,50,135.8,49.1,133.4,46.6Z"/>
+            </svg>
+            Сотрудничество</nuxt-link></li>
+          <li><nuxt-link to='/FAQ'>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 198.9 199.7">
+              <title>faq</title>
+              <path d="M93,196.1l-3.5-3.5V166.2l3.4-3.4c2.4-2.5,4.3-3.4,6.6-3.4s4.1.9,6.6,3.4,3.4,3.9,3.4,9.5,0,6.8,8,5c22.3-5,43.1-21.4,53.7-42.4a86.9,86.9,0,0,0,7.9-30.5C182.6,47.3,127,5.1,73.2,23.9A80.7,80.7,0,0,0,20.4,87.6c-1.4,8.6-.6,23.7,1.6,32.3,3.7,14.1,14.7,31.2,26.4,41,6.1,5.1,7,6.4,7,10.8a9.7,9.7,0,0,1-14.3,8.5c-4-2.1-11.9-9.3-17.5-16A105.7,105.7,0,0,1,1.8,120.9c-2.2-9.7-2.4-31.9-.4-41A102,102,0,0,1,80,1.3c7.7-1.7,31.2-1.7,39,0,39.7,8.7,69.8,38.9,78.6,78.6,1.7,7.8,1.7,31.2,0,39-9.9,44.9-46.6,76.9-91.8,80.1l-9.2.7Zm-.2-55.2-3.6-3.5.4-10.3c.3-8.7.8-11.1,3.2-15.9,3.2-6.6,7.5-10.7,15.6-14.8S119,88.2,119,79.3c0-5.4-.5-7.2-2.7-10.6-4.1-6.2-9-8.8-16.8-8.8-5.1,0-7.4.5-10.4,2.4a20.1,20.1,0,0,0-9.3,15.2c-.5,4.3-1.3,6.1-3.9,8.6-4.5,4.5-8.5,4.5-13.2-.2s-3.5-3.6-2.9-10.3c.8-8.8,6-19.4,12.2-25.2a52.4,52.4,0,0,1,11.3-7.3c6-2.9,7.6-3.2,16.2-3.2s10.1.3,16.1,3.2c9.3,4.4,15.1,10,19.6,19.1,3.6,7.2,3.8,8.1,3.8,17.1s-.3,10.2-3.2,16.2c-4.2,8.9-9.1,14.1-17,18s-9.3,6.3-9.3,16.4c0,7.4-.2,7.8-3.4,11.1s-8.6,4.6-13.3-.1Z"/>
+            </svg>
+            FAQ</nuxt-link></li>
+          <li>
+            <button class="btn open-socials" type="button" onclick="this.classList.toggle('show');">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1112.6 632.5">
+                <title>vk</title>
+                <path d="M885.4,630.6c-19.2-4.5-45.7-19.2-62.9-34.9-8.6-7.9-30.4-30.9-48.4-51-57.3-64.2-75.3-72.3-99.6-44.7-14.7,16.7-20.8,37.8-24.1,83.4-1.9,26.3-3.9,31.2-16.4,40.5-5.5,4.1-10.1,4.6-55.3,5.8-75.3,2.1-109.5-2.7-158.1-22.2-43.2-17.3-103.6-57.3-140.9-93.1-48.4-46.6-121.4-148-174.1-241.6C61.8,194.9,2.7,72.4.2,54.7c-1.3-9.8,3-17.3,13.1-22.8,6.4-3.5,15.8-3.9,96.1-4.6s90-.2,98.5,3c15.4,5.9,21.1,12.3,31.2,35.3,27.8,63.6,73.2,151.3,96.6,186.5,30.4,45.7,60.9,66.9,78.6,54.5,16-11.2,25.9-68.5,24-139.3C436.1,82,425.2,57.8,384,46.5c-8.3-2.3-13.7-5-14.1-7.1s3.6-7.5,8.7-12.5C400.8,5.1,426.9,0,516.3,0c99.8,0,121.1,5.9,131.8,36.7,2.5,7,3.1,31.3,3.1,124,0,113,.1,115.5,4.6,125.3,6.5,14,15.2,21.6,24.8,21.6,6.2,0,10.7-2.4,21.8-11.6,16.5-13.6,26.7-25.5,46.1-53.7,35.3-51.4,62.1-100,87.4-158.8,17.6-40.8,21.5-47.5,29.7-51.4,3.7-1.8,38-2.8,115.1-3.3l109.9-.8,9.1,4.9c18.3,9.8,17.2,31.5-3.5,72.7-16,31.6-41.7,69.5-98.9,145.4-28.4,37.7-54.7,74.8-58.5,82.4-8.1,16.5-8.5,30.1-1.3,44.4,2.9,5.7,25.9,30.3,61.6,65.7,58.8,58.4,74.4,75.9,95.5,107.8,13.7,20.6,19.6,40.1,16.4,54.2-2,8.8-12.4,18.5-23.7,21.9-14.7,4.5-184.8,7.1-201.9,3.2Z"/>
+              </svg>
+              Социальные сети <span class="angle"></span>
+            </button>
+            <ul class="profile_menu__socials container">
+              <li><a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 261.7 213.2">
+                  <title>twitter</title>
+                  <path d="M74.2,213.1c-26.9-2-48.6-8.5-69.4-20.9L0,189.4l8.4.3a107.8,107.8,0,0,0,53.8-12A134.7,134.7,0,0,0,78,167.8l1.2-.9-4-.4c-15.4-1.3-30.2-10.1-39.1-23-2.7-4-6-10.3-6.6-12.8s-.3-1.3,1.9-.9c3.7.7,12.2.5,17.1-.4l4.6-.8L48,126.9A53.5,53.5,0,0,1,11.8,88.8c-1-4-2-13.5-1.3-13.5L13,76.4c4.8,2.5,14.8,5.1,19.3,5.1h1.9l-1.6-1.1c-3.2-2.3-11-10.6-13.3-14.2-8.9-14-11.1-31.7-5.6-46.9,1-3,3.5-8.5,4.1-9.1s1.1.8,2.1,2A173.8,173.8,0,0,0,37.1,29.3a151.8,151.8,0,0,0,85.3,36.3c3.3.3,6.2.5,6.3.3a13.2,13.2,0,0,0-.4-3.7c-.9-5.1-.3-16.9,1-21.8A53.1,53.1,0,0,1,144,15.5,50.2,50.2,0,0,1,161,4c19.6-7.9,41.5-4,56.6,10l3.1,2.9,3.8-.8a117.1,117.1,0,0,0,23.2-8.5c7.9-3.9,7.8-3.9,4.9,2.4a58,58,0,0,1-17.1,20.8,32.4,32.4,0,0,0-3.4,2.7c0,.2,8.2-1.3,12.3-2.3A145.4,145.4,0,0,0,261,25.8c1.2-.5,1.1-.3-2.6,4.6a128.1,128.1,0,0,1-18.2,18.8l-4.9,4,.2,3.7c.3,4.6-.6,17.7-1.7,25.1a165.5,165.5,0,0,1-19.2,55.3c-24.5,42.5-64.1,68.9-112.4,74.8-6.3.8-23,1.4-28,1Z"/>
+                </svg> Твиттер
+              </a></li>
+              <li><a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1112.6 632.5">
+                  <title>vk</title>
+                  <path d="M885.4,630.6c-19.2-4.5-45.7-19.2-62.9-34.9-8.6-7.9-30.4-30.9-48.4-51-57.3-64.2-75.3-72.3-99.6-44.7-14.7,16.7-20.8,37.8-24.1,83.4-1.9,26.3-3.9,31.2-16.4,40.5-5.5,4.1-10.1,4.6-55.3,5.8-75.3,2.1-109.5-2.7-158.1-22.2-43.2-17.3-103.6-57.3-140.9-93.1-48.4-46.6-121.4-148-174.1-241.6C61.8,194.9,2.7,72.4.2,54.7c-1.3-9.8,3-17.3,13.1-22.8,6.4-3.5,15.8-3.9,96.1-4.6s90-.2,98.5,3c15.4,5.9,21.1,12.3,31.2,35.3,27.8,63.6,73.2,151.3,96.6,186.5,30.4,45.7,60.9,66.9,78.6,54.5,16-11.2,25.9-68.5,24-139.3C436.1,82,425.2,57.8,384,46.5c-8.3-2.3-13.7-5-14.1-7.1s3.6-7.5,8.7-12.5C400.8,5.1,426.9,0,516.3,0c99.8,0,121.1,5.9,131.8,36.7,2.5,7,3.1,31.3,3.1,124,0,113,.1,115.5,4.6,125.3,6.5,14,15.2,21.6,24.8,21.6,6.2,0,10.7-2.4,21.8-11.6,16.5-13.6,26.7-25.5,46.1-53.7,35.3-51.4,62.1-100,87.4-158.8,17.6-40.8,21.5-47.5,29.7-51.4,3.7-1.8,38-2.8,115.1-3.3l109.9-.8,9.1,4.9c18.3,9.8,17.2,31.5-3.5,72.7-16,31.6-41.7,69.5-98.9,145.4-28.4,37.7-54.7,74.8-58.5,82.4-8.1,16.5-8.5,30.1-1.3,44.4,2.9,5.7,25.9,30.3,61.6,65.7,58.8,58.4,74.4,75.9,95.5,107.8,13.7,20.6,19.6,40.1,16.4,54.2-2,8.8-12.4,18.5-23.7,21.9-14.7,4.5-184.8,7.1-201.9,3.2Z"/>
+                </svg> Группа ВКонтакте
+              </a></li>
+              <li><a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 546.1 382.9">
+                  <title>youtube-simple</title>
+                  <path d="M183.8,382.6c-75.5-2.1-112.9-5-128-10.1S26.9,357.3,19.7,345C5.9,321.5,0,275.5,0,191.7,0,125.1,3.9,81.1,11.8,57.3c5.5-16.7,9.3-23,19.1-32.2A66.1,66.1,0,0,1,62.8,7.9C109.1-2.7,437.4-2.6,483.7,8a67.1,67.1,0,0,1,48.1,41.5c10,25.6,12.9,52,14.1,124.2,1.5,91.9-4.5,146.5-18.7,170.5-4.4,7.3-13.9,16.9-21.7,21.9-14.6,9.4-27.1,11.6-83.4,14.6C393.9,382.1,219,383.6,183.8,382.6Zm55.3-131.8,54.4-28.3c60.7-31.3,67.5-34.9,67.9-36.2s-17.7-10.7-39.8-22.3l-60-31.2-31.3-16.4c-6.5-3.3-12.2-6.1-12.8-6.1s-1,34-1,75.6.5,75.5,1.1,75.5S227.9,256.7,239.1,250.8Z"/>
+                </svg> YouTube канал
+              </a></li>
+              <li><a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219.6 179.6">
+                  <title>mail</title>
+                  <path d="M3.4,176.2,0,172.8V56.4L3.4,53c2.3-2.3,4.3-3.4,6.4-3.4s13.7,6.8,41.5,24.1l38.5,24,28.6-19c32-21.3,32.4-21.4,38.2-15.7,4,4.1,4.4,8,1.2,12.1s-64.4,44.5-67.7,44.5-12.6-5.9-61.8-36.8L20,77.6v82H180V58l-3.4-1.6a29.9,29.9,0,0,1-12.7-12.2l-2.4-4.6H26.8l-3.4-3.4c-2.5-2.4-3.4-4.3-3.4-6.6s.9-4.1,3.4-6.6l3.4-3.4H161.5L164,15c8.9-16.9,33.2-20.2,47-6.4s10.6,38.1-6.4,47.1L200,58.1V172.8l-3.4,3.4-3.4,3.4H6.8Zm191.5-138c4.7-2.5,6.3-8.3,3.7-13.4-3.5-6.7-13.7-6.7-17.2,0C176.7,33.9,185.8,42.9,194.9,38.2Z"/>
+                </svg> Электронная почта
+              </a></li>
+            </ul>
+          </li>
+        </ul>
       </div>
       <div class="user_login-button" v-show="!(loggedIn)">
         <button class="btn btn-huge container" aria-label="Войти через OPSKINS"> Войти через
@@ -63,7 +158,12 @@
 </template>
 
 <script>
+  import MobileNavigation from '~/components/MobileNavigation'
+
   export default {
+      components: {
+          MobileNavigation
+      },
       name: 'UserInfo',
       props: {
           loggedIn: {
@@ -104,29 +204,6 @@
           padding: 0 14px;
         }
       }
-      .open-menu {
-        display: none;
-        margin: auto 14px;
-        width: 24px;
-        height: 19px;
-        span {
-          font-size: 0;
-          line-height: 0;
-          background: white;
-          width: 24px;
-          display: block;
-          height: 2px;
-          transition: all 0.25s ease-in-out;
-        }
-        &:before, &:after {
-          content: '';
-          display: block;
-          background: white;
-          width: 24px;
-          height: 2px;
-          transition: all 0.25s ease-in-out;
-        }
-      }
       ul {
         list-style-type: none;
         padding: 0;
@@ -134,11 +211,12 @@
         align-items: center;
         li {
           margin: 0 14px;
-          a {
+          a, .btn {
             text-decoration: none;
             color: #777d97;
             font-weight: 500;
             text-align: center;
+            font-size: 16px;
             &:hover {
               text-decoration: none;
               color: #5499e8;
@@ -168,7 +246,7 @@
         padding: 6px;
         align-items: center;
         .angle {
-          transform: translate(5px, -2px) rotate(45deg);
+          transform: translate(5px, -4px) rotate(45deg);
         }
         &.container {
           display: flex;
@@ -186,8 +264,7 @@
           padding: 0;
           list-style-type: none;
           position: absolute;
-          top: 41px;
-          height: 0;
+          bottom: 100px;
           overflow: hidden;
           opacity: 0;
           left: 0;
@@ -197,6 +274,7 @@
           transition: all 0.3s ease-out;
           li {
             padding: 7px;
+            align-items: center;
           }
         }
         &.open {
@@ -204,8 +282,9 @@
             transform: translate(5px, 0) rotate(-135deg);
           }
           ul {
-            height: calc(34px * 2);
             opacity: 1;
+            top: 41px;
+            bottom: auto;
             transition: all 0.3s ease-out;
           }
         }
@@ -267,6 +346,104 @@
         }
       }
     }
+    .open-profile-menu {
+      position: relative;
+      .angle {
+        font-size: 0;
+        line-height: 0;
+        transform: translateY(-14px) rotate(45deg);
+      }
+      + .profile_menu {
+        position: absolute;
+        right: -500px;
+        top: 80px;
+        width: 310px;
+        padding: 14px 0 19px;
+        list-style-type: none;
+        background: #1D1E28 linear-gradient(to right, #184e68, #57CA85) no-repeat center bottom;
+        background-size: 100% 5px;
+        li {
+          padding: 0;
+          margin: 0;
+          a, .open-socials {
+            display: flex;
+            width: 100%;
+            padding: 14px 29px;
+            color: #777d97;
+            align-items: center;
+            text-decoration: none;
+            white-space: nowrap;
+            svg {
+              margin-right: 14px;
+              height: 20px;
+              width: 20px;
+              path {
+                fill: #777d97;
+              }
+            }
+            &.nuxt-link-active, &:hover, &:focus {
+              background: #17171F linear-gradient(to top, #184e68, #57CA85) no-repeat left center;
+              background-size: 3px 100%;
+              color: #5499e8;
+              svg path {
+                fill: #5499e8;
+              }
+            }
+            .angle {
+              margin-left: auto;
+              transform: translateY(-3px) rotate(45deg);
+            }
+          }
+        }
+      }
+      &.open {
+        .angle {
+          transform: translateY(-10px) rotate(-135deg);
+        }
+        + .profile_menu {
+          right: 0;
+        }
+      }
+    }
+    .open-socials {
+      + .profile_menu__socials {
+        padding-left: 34px;
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        background: #17171F;
+        li {
+          overflow: hidden;
+          height: 0px;
+          a {
+            padding-top: 7px;
+            padding-bottom: 7px;
+            text-decoration: none;
+            &:hover, &:focus {
+              background: transparent;
+            }
+          }
+        }
+      }
+      &:hover, &:focus {
+        .angle {
+          border-color: #5499e8;
+        }
+      }
+      &.show {
+        .angle {
+          transform: translateY(3px) rotate(-135deg);
+          border-color: #5499e8;
+        }
+        + .profile_menu__socials {
+          padding-top: 14px;
+          padding-bottom: 14px;
+          li {
+            height: 34px;
+          }
+        }
+      }
+    }
     .user_login-button {
       .btn-huge {
         padding: 8px 14px;
@@ -279,6 +456,24 @@
             fill: white;
           }
         }
+      }
+    }
+  }
+  .open-menu {
+    display: none;
+    margin: 20px 14px auto 0;
+    width: 35px;
+    min-width: 35px;
+    span {
+      font-size: 0;
+      line-height: 0;
+      position: absolute;
+    }
+    svg {
+      height: 100%;
+      width: 100%;
+      path {
+        fill: white;
       }
     }
   }
@@ -339,153 +534,52 @@
           max-width: 90px;
         }
       }
+      .open-profile-menu {
+        + .profile_menu {
+
+        }
+        &.open {
+          + .profile_menu {
+
+          }
+        }
+      }
     }
   }
+
   @media screen and (max-width: 1024px) {
-    .p_header {
-      nav {
-        position: relative;
-        min-width: 0;
-        width: auto;
-        .open-menu {
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          &.active {
-            span {
-              width: 0;
-              margin: 0 auto;
-              transition: all 0.25s ease-in-out;
-            }
-            &:before {
-              transform-origin: left center;
-              transform: rotate(45deg);
-              transition: all 0.25s ease-in-out;
-            }
-            &:after {
-              transform-origin: left center;
-              transform: rotate(-45deg);
-              transition: all 0.25s ease-in-out;
-            }
-          }
-        }
-        ul {
-          position: absolute;
-          top: -400px;
-          left: 130px;
-          height: auto;
-          background: #272938;
-          color: white;
-          border-radius: 2px;
-          min-width: 0;
-          padding: 15px 0;
-          width: 200px;
-          opacity: 0;
-          transition: top 0.4s ease-out, opacity 0.4s ease-out;
-          li {
-            width: 100%;
-            margin-left: 0;
-            a {
-              width: 100%;
-              display: block;
-              padding: 14px;
-            }
-            &.glowing {
-              width: 100%;
-            }
-          }
-          &.open {
-            top: 44px;
-            opacity: 1;
-          }
-        }
-      }
+    .open-menu {
+      display: block;
     }
-  }
-  @media screen and (max-width: 767px) {
     .p_header {
-      flex-direction: column-reverse;
-      height: 132px;
-      align-items: flex-start;
-      nav {
+      .header_nav-list, .user_settings, .user_balance, .user_profile .info, .user_profile .angle {
+        display: none;
+      }
+      nav.header_nav {
         margin-right: auto;
+        min-width: auto;
+        width: auto;
       }
-      .header_user {
-        margin-left: auto;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-      }
-    }
-  }
-  @media screen and (max-width: 631px) {
-    .p_header {
-      flex-direction: row;
-      position: relative;
-      nav {
-        margin-top: auto;
-        margin-bottom: 0;
-        min-width: 168px;
-        position: absolute;
-        bottom: 22px;
-        ul {
-          left: 0;
-        }
-      }
-      .header_user {
-        .user_profile {
-          margin-top: 14px;
-        }
-      }
-    }
-  }
-  @media screen and (max-width: 560px) {
-    .p_header {
-      position: relative;
-      height: auto;
-      flex-direction: column-reverse;
-      nav {
-        position: relative;
-        bottom: 0;
-        margin-top: 14px;
-        margin-bottom: 5px;
-      }
-      .header_user {
-        width: 100%;
-        .user_settings, .user_balance, .user_login-button {
-          margin: 0 auto 14px;
-          &:after {
-            display: none;
-          }
-        }
+      .user_login-button {
+        margin-left: 14px;
         .btn-huge {
           flex-wrap: wrap;
+          width: auto;
+          svg {
+            margin-left: 0;
+          }
         }
-        .user_profile {
-          margin: 0;
-          position: absolute;
-          bottom: 14px;
-          right: 14px;
-        }
+      }
+      .open-profile-menu + .profile_menu {
+        display: none;
       }
     }
   }
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 340px) {
     .p_header {
-      nav {
-        width: 200px;
-        margin-left: auto;
-        justify-content: center;
-        .p_logo {
-          margin-left: 22px;
-        }
-      }
-      .header_user {
-        height: auto;
-        .user_profile {
-          position: relative;
-          margin-top: 0;
-          bottom: auto;
-          right: auto;
+      .user_login-button {
+        .btn-huge {
+          padding: 4px;
         }
       }
     }

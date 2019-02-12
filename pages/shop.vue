@@ -1,25 +1,32 @@
 <template>
   <div class="page">
+    <MobileNavigation :loggedIn="loggedIn" />
     <Header :loggedIn="loggedIn"/>
     <div class="p_container">
       <div class="p_main container container--justify">
         <ShopLeft :loggedIn="loggedIn" :loggedFirst="loggedFirst"/>
         <ShopRight/>
       </div>
+
+      <Modals />
     </div>
   </div>
 </template>
 
 <script>
+  import MobileNavigation from '~/components/MobileNavigation.vue'
   import Header from '~/components/Header.vue'
   import ShopLeft from '~/components/ShopLeft'
   import ShopRight from '~/components/ShopRight'
+  import Modals from '~/components/Modals'
 
   export default {
     components: {
+      MobileNavigation,
       Header,
       ShopLeft,
       ShopRight,
+      Modals
     },
     data() {
       return {
@@ -33,7 +40,6 @@
 
 <style lang="less">
   .p_container {
-    margin-top: 80px;
     height: calc(100vh - 80px);
     padding: 14px;
     .p_main {
@@ -41,23 +47,17 @@
     }
   }
   @media screen and (max-width: 1146px) {
-      .p_container {
-          height: auto;
-      }
+    .p_container {
+        height: auto;
+    }
     .p_main {
       flex-wrap: wrap;
-        height:  auto!important;
+      height:  auto!important;
     }
   }
   @media screen and (max-width: 767px) {
-    .p_container {
-      margin-top: 132px;
-    }
   }
   @media screen and (max-width: 631px) {
-    .p_container {
-      margin-top: 0;
-    }
   }
 
 </style>

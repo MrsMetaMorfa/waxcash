@@ -4,29 +4,25 @@
     <main class="faq_main">
       <ul class="faq_main__list">
         <li class="faq_main__list-item block_light">
-          <span class="icon"></span>
-          <h3 onclick="this.parentNode.classList.toggle('open')">Как пользоваться нашим сервисом?</h3>
+          <h3 onclick="this.parentNode.classList.toggle('open')">Как пользоваться нашим сервисом? <span class="icon"></span></h3>
           <div class="inner">
             <p>Деньги зачисляются на счет в течении 20 минут. Наш сервис работает круглосуточно и в полуавтоматическом режиме.</p>
           </div>
         </li>
         <li class="faq_main__list-item block_light">
-          <span class="icon"></span>
-          <h3 onclick="this.parentNode.classList.toggle('open')">Как быстро я получу свои средства?</h3>
+          <h3 onclick="this.parentNode.classList.toggle('open')">Как быстро я получу свои средства? <span class="icon"></span></h3>
           <div class="inner">
             <p>Деньги зачисляются на счет в течении 20 минут. Наш сервис работает круглосуточно и в полуавтоматическом режиме.</p>
           </div>
         </li>
         <li class="faq_main__list-item block_light">
-          <span class="icon"></span>
-          <h3 onclick="this.parentNode.classList.toggle('open')">Какая коммисия?</h3>
+          <h3 onclick="this.parentNode.classList.toggle('open')">Какая коммисия? <span class="icon"></span></h3>
           <div class="inner">
             <p>Деньги зачисляются на счет в течении 20 минут. Наш сервис работает круглосуточно и в полуавтоматическом режиме.</p>
           </div>
         </li>
         <li class="faq_main__list-item block_light">
-          <span class="icon"></span>
-          <h3 onclick="this.parentNode.classList.toggle('open')">Как считается реферальный уровень?</h3>
+          <h3 onclick="this.parentNode.classList.toggle('open')">Как считается реферальный уровень? <span class="icon"></span></h3>
           <div class="inner">
             <p>Вы должны пригласить определенное количество людей для повышения уровня. Ниже представлена таблица уровней.</p>
             <ul>
@@ -39,8 +35,7 @@
           </div>
         </li>
         <li class="faq_main__list-item block_light">
-          <span class="icon"></span>
-          <h3 onclick="this.parentNode.classList.toggle('open')">Где я могу получить ответы на свои вопросы?</h3>
+          <h3 onclick="this.parentNode.classList.toggle('open')">Где я могу получить ответы на свои вопросы? <span class="icon"></span></h3>
           <div class="inner">
             <p>Деньги зачисляются на счет в течении 20 минут. Наш сервис работает круглосуточно и в полуавтоматическом режиме.</p>
           </div>
@@ -108,28 +103,32 @@
       padding-left: 0;
       &-item {
         padding: 0!important;
-        position: relative;
-        .icon {
-          position: absolute;
-          width: 25px;
-          height: 25px;
-          display: block;
-          top: 14px;
-          right: 29px;
-          background: url("~assets/icons/arrow.svg") no-repeat center;
-          background-size: 100% 100%;
-        }
         h3 {
+          position: relative;
           font-weight: 400;
           padding: 14px 68px 14px 29px;
           cursor: pointer;
           line-height: 25px;
+          .icon {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            display: block;
+            top: 14px;
+            right: 29px;
+            background: url("~assets/icons/arrow.svg") no-repeat center;
+            background-size: 100% 100%;
+          }
         }
         .inner {
-          height: 0;
+          //height: 0;
+          max-height: 0;
           overflow: hidden;
           color: #777d97;
           padding: 0 50px;
+          //transform-origin: center top;
+          //transform: scaleY(0);
+          transition: max-height 0.5s ease-out, padding-bottom 0.3s ease-in;
           ul {
             list-style: none;
             padding: 0;
@@ -155,16 +154,18 @@
           }
         }
         &.open {
-          .icon {
-            background: url("~assets/icons/close.svg") no-repeat center;
-            background-size: 100% 100%;
-          }
           h3 {
             color: #5499e8;
+            .icon {
+              background: url("~assets/icons/close.svg") no-repeat center;
+              background-size: 100% 100%;
+            }
           }
           .inner {
-            height: auto;
+            //height: auto;
+            max-height: 300px;
             padding-bottom: 14px;
+            //transform: scaleY(1);
           }
         }
       }
@@ -229,6 +230,9 @@
         }
       }
     }
+    .faq_main__list-item.open .inner {
+      max-height: 400px;
+    }
   }
   @media screen and (max-width: 520px) {
     .faq_wrapper {
@@ -270,6 +274,9 @@
           display: block;
         }
       }
+    }
+    .faq_main__list-item.open .inner {
+      max-height: 600px;
     }
   }
 </style>

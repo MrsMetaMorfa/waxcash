@@ -1,20 +1,26 @@
 <template>
   <div class="page">
+    <MobileNavigation :loggedIn="loggedIn" />
     <Header :loggedIn="loggedIn"/>
     <section class="p_container container">
       <Partnership />
+      <Modals />
     </section>
   </div>
 </template>
 
 <script>
-  import Header from '~/components/Header.vue'
-  import Partnership from '~/components/Partnership.vue'
+  import MobileNavigation from '~/components/MobileNavigation'
+  import Header from '~/components/Header'
+  import Partnership from '~/components/Partnership'
+  import Modals from '~/components/Modals'
 
   export default {
     components: {
+      MobileNavigation,
       Header,
-        Partnership
+      Partnership,
+      Modals
     },
     data() {
       return {
@@ -37,14 +43,8 @@
   @media screen and (max-width: 900px) {
   }
   @media screen and (max-width: 767px) {
-    .p_container {
-      margin-top: 132px;
-    }
   }
   @media screen and (max-width: 631px) {
-    .p_container {
-      margin-top: 0;
-    }
   }
 </style>
 

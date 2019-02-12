@@ -44,8 +44,8 @@
         </li>
       </ul>
       <div class="sorting_buttons container">
-        <button class="btn container">Сортировка <span class="triangle"></span></button>
-        <button class="btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200.6 200">
+        <button class="btn container" type="button" onclick="this.classList.toggle('active');">Сортировка <span class="triangle"></span></button>
+        <button class="btn" type="button" onclick="this.classList.toggle('active');"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200.6 200">
           <title>Reload</title>
           <path d="M13.7,196.6l-3.4-3.4V146.8l3.4-3.4,3.4-3.4H63.5l3.4,3.4c4.4,4.4,4.5,8.3.5,12.8s-3.1,3.3-13.6,3.8l-10.6.5,6.7,4.4c22.6,14.9,52.6,19,76.6,10.6,31.3-10.9,53.7-41.7,53.8-73.8,0-4.2.5-5.4,3.4-8.3,4.7-4.7,8.6-4.6,13.3.2l3.6,3.5-.7,9.2a100.7,100.7,0,0,1-77.6,91.2c-27.1,6.4-62.7-1-86.7-18.1L30.8,176l-.5,9.1c-.5,8.7-.6,9.2-3.8,12s-8.4,3.9-12.8-.5ZM3.5,106.5,0,102.9l.7-9.2A100.5,100.5,0,0,1,78.3,2.5c27.1-6.4,62.7,1,86.7,18.1l4.8,3.4.5-9.1c.5-8.7.6-9.2,3.8-12s8.4-3.9,12.8.5l3.4,3.4V53.2l-3.4,3.4L183.5,60H137.1l-3.4-3.4c-4.4-4.4-4.5-8.3-.5-12.8s3.1-3.3,13.6-3.8l10.6-.5-6.7-4.4c-22.6-14.9-52.6-19-76.6-10.6C42.8,35.4,20.3,66.3,20.3,98.4c0,4.1-.5,5.3-3.4,8.2-4.7,4.7-8.6,4.6-13.4-.1Z"/>
         </svg>
@@ -124,6 +124,8 @@
                 :class="{
                     shoes: product.productTypeShoes,
                     electronics: product.productTypeElectronics,
+                    wears: product.productTypeWears,
+                    stickers: product.productTypeStickers,
                     sale: product.productSale,
                     high_price: product.productHighPrice,
                     selected: product.productSelected
@@ -470,7 +472,7 @@ export default {
             fill: #777d97;
           }
         }
-        &:hover, &:focus {
+        &:hover, &:focus, &.active {
           background: #5499E8;
           color: white;
           &.container {
@@ -505,6 +507,8 @@ export default {
         .__view {
           > .container {
             position: absolute;
+            padding-left: 7px!important;
+            padding-right: 7px!important;
           }
         }
         .container {
@@ -680,45 +684,9 @@ export default {
       }
     }
   }
-  .card {
-    width: calc(100%/10 - 14px);
-  }
-  @media screen and (max-width: 3660px) {
-    .card {
-      width: calc(100%/9 - 14px);
-    }
-  }
-  @media screen and (max-width: 3225px) {
-    .card {
-      width: calc(100%/8 - 14px);
-    }
-  }
-  @media screen and (max-width: 2790px) {
-    .card {
-      width: calc(100%/7 - 14px);
-    }
-  }
-  @media screen and (max-width: 2355px) {
-    .card {
-      width: calc(100%/6 - 14px);
-    }
-  }
-  @media screen and (max-width: 1920px) {
-    .card {
-      width: calc(100%/5 - 14px);
-    }
-  }
   @media screen and (max-width: 1640px) {
-    .card {
-      width: calc(100%/5 - 14px);
-    }
     .p_main-left {
       width: calc(100% - 594px);
-    }
-  }
-  @media screen and (max-width: 1400px) {
-    .card {
-      width: calc(100%/4 - 14px);
     }
   }
   @media screen and (max-width: 1360px) {
@@ -735,14 +703,8 @@ export default {
     .p_main-left {
       width: 100%;
     }
-    .card {
-      width: calc((100%/5) - 14px);
-    }
   }
   @media screen and (max-width: 810px) {
-    .card {
-      width: calc((100%/4) - 14px);
-    }
     .p_main-left {
       .main_body {
         .guide {
@@ -797,9 +759,6 @@ export default {
     }
   }
   @media screen and (max-width: 680px) {
-    .card {
-      width: calc(100%/3 - 14px);
-    }
   }
   @media screen and (max-width: 520px) {
     .p_main-left {
@@ -864,9 +823,6 @@ export default {
           }
         }
       }
-    }
-    .card {
-      width: calc(100%/2 - 14px);
     }
   }
   @media screen and (max-width: 400px) {

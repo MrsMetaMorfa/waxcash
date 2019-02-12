@@ -2,7 +2,7 @@
   <aside class="block p_shop-right">
     <div class="shop_header container container--justify">
       <h2 class="shop_title">
-        <img src="~/assets/icons/cart.svg" alt="">
+        <img src="~assets/icons/cart.svg" alt="">
         Корзина
       </h2>
       <p class="shop_total">
@@ -125,7 +125,10 @@
       </vue-scroll>
     </div>
     <div class="shop_footer container">
-      <button class="btn btn-huge btn-buy" type="button">Купить</button>
+      <button class="btn btn-huge btn-buy" type="button"
+              onclick="document.querySelector('.modals').classList.add('active');
+                        document.querySelector('#modalOrder').classList.add('active');"
+      >Купить</button>
     </div>
   </aside>
 </template>
@@ -432,7 +435,7 @@ export default {
         width: calc(100% + 28px) !important;
         margin-right: -14px;
         margin-left: -14px;
-          max-height: 500px;
+        max-height: 500px;
         height: auto!important;
         .shop_container {
           flex-direction: column;
@@ -488,6 +491,7 @@ export default {
         max-width: 100%;
         max-height: 100%;
         margin: auto;
+        filter: drop-shadow(0 2px 2px black);
       }
     }
     &__inner {

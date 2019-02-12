@@ -1,20 +1,26 @@
 <template>
   <div class="page">
+    <MobileNavigation :loggedIn="loggedIn" />
     <Header :loggedIn="loggedIn"/>
     <section class="p_container container">
-      <Order />
+      <Accumulation />
+      <Modals />
     </section>
   </div>
 </template>
 
 <script>
-  import Header from '~/components/Header.vue'
-  import Order from '~/components/Order.vue'
+  import MobileNavigation from '~/components/MobileNavigation'
+  import Header from '~/components/Header'
+  import Accumulation from '~/components/Accumulation'
+  import Modals from '~/components/Modals'
 
   export default {
     components: {
+      MobileNavigation,
       Header,
-      Order
+      Accumulation,
+      Modals
     },
     data() {
       return {
@@ -28,8 +34,9 @@
 
 <style lang="less">
   .p_container {
-    background: transparent url("~assets/images/order-bg.jpg") no-repeat center top;
+    background-image: url('~/assets/images/order-bg.jpg');
     background-size: cover;
+    background-position: center;
   }
 
   @media screen and (max-width: 1824px) {
@@ -39,14 +46,8 @@
   @media screen and (max-width: 900px) {
   }
   @media screen and (max-width: 767px) {
-    .p_container {
-      margin-top: 132px;
-    }
   }
   @media screen and (max-width: 631px) {
-    .p_container {
-      margin-top: 0;
-    }
   }
 </style>
 

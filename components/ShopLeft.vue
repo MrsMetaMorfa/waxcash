@@ -69,6 +69,8 @@
                   :class="{
                       shoes: product.productTypeShoes,
                       electronics: product.productTypeElectronics,
+                      wears: product.productTypeWears,
+                      stickers: product.productTypeStickers,
                       sale: product.productSale,
                       high_price: product.productHighPrice,
                       selected: product.productSelected
@@ -76,35 +78,19 @@
           />
         </div>
       </vue-scroll>
-      <div class="pagination container">
-        <div class="pagination_prev container">
-          <button class="btn btn-page" type="button">Первая</button>
-          <button class="btn btn-page" type="button">&lt;</button>
-        </div>
-        <button class="btn btn-page" type="button">1</button>
-        <button class="btn btn-page current" type="button">2</button>
-        <button class="btn btn-page" type="button">3</button>
-        <button class="btn btn-page" type="button">4</button>
-        <button class="btn btn-page disabled" type="button">...</button>
-        <button class="btn btn-page" type="button">12</button>
-        <button class="btn btn-page" type="button">13</button>
-        <button class="btn btn-page" type="button">14</button>
-        <button class="btn btn-page" type="button">15</button>
-        <div class="pagination_next container">
-          <button class="btn btn-page" type="button">&gt;</button>
-          <button class="btn btn-page" type="button">Последняя</button>
-        </div>
-      </div>
+      <Pagination />
     </div>
   </main>
 </template>
 
 <script>
 import Card from '~/components/card'
+import Pagination from '~/components/pagination'
 
 export default {
     components: {
-        Card
+        Card,
+        Pagination
     },
     name: '',
     props: {
@@ -366,7 +352,6 @@ export default {
 <style lang="less">
   .p_shop-left {
     width: calc(69.1332% - 14px);
-    height: 100%;
     padding: 0;
     .main_header {
       background: #272938;
@@ -469,12 +454,12 @@ export default {
         margin-right: -14px;
         margin-left: -14px;
         height: calc(100% - 65px) !important;
-        .container {
+        .__view > .container {
           justify-content: flex-start;
           flex-wrap: wrap;
-          .container--justify {
-            justify-content: space-between;
-          }
+          position: absolute;
+          padding-left: 7px!important;
+          padding-right: 7px!important;
         }
         .__rail-is-vertical {
           right: 0!important;
@@ -489,76 +474,9 @@ export default {
       }
     }
   }
-  .pagination {
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding-top: 15px;
-    .btn {
-      border-radius: 2px;
-      background: #272938;
-      padding: 10px;
-      line-height: 16px;
-      margin-left: 7px;
-      margin-right: 7px;
-      color: #777d97;
-      margin-top: 14px;
-      min-width: 36px;
-      display: block;
-      &:hover, &:focus {
-        background: #0A0B0E;
-      }
-      &.current {
-        background: #5499E8;
-        color: white;
-      }
-      &.disabled {
-        cursor: not-allowed;
-        &:hover, &:focus {
-          background: #272938;
-        }
-      }
-    }
-  }
-  .card {
-    width: calc((100%/12) - 14px);
-  }
-  @media screen and (max-width: 3660px) {
-      .card {
-          width: calc(100%/11 - 14px);
-      }
-  }
-  @media screen and (max-width: 3225px) {
-      .card {
-          width: calc(100%/10 - 14px);
-      }
-  }
-  @media screen and (max-width: 2790px) {
-      .card {
-          width: calc(100%/9 - 14px);
-      }
-  }
-  @media screen and (max-width: 2355px) {
-      .card {
-          width: calc(100%/8 - 14px);
-      }
-  }
-  @media screen and (max-width: 1920px) {
-      .card {
-          width: calc(100%/7 - 14px);
-      }
-  }
   @media screen and (max-width: 1640px) {
     .p_shop-left {
       width: calc(100% - 514px);
-    }
-    .card {
-      width: calc((100%/6) - 14px);
-    }
-  }
-  @media screen and (max-width: 1499px) {
-    .card {
-      width: calc((100%/5) - 14px);
     }
   }
   @media screen and (max-width: 1400px) {
@@ -574,10 +492,12 @@ export default {
           margin-left: auto;
         }
       }
-        .main_body .__vuescroll {
-            height: calc(100% - 115px) !important;
-            max-height: 500px;
+      .main_body {
+        height: calc(100% - 96px);
+        .__vuescroll {
+        height: calc(100% - 115px) !important;
         }
+      }
     }
     .pagination {
       &_next, &_prev {
@@ -589,19 +509,12 @@ export default {
       }
     }
   }
-  @media screen and (max-width: 1200px) {
-    .p_shop-left .main_body {
-      height: calc(100% - 96px);
-    }
-    .card {
-      width: calc(100%/4 - 14px);
-    }
-  }
   @media screen and (max-width: 1146px) {
     .p_shop-left {
       width: 100%;
       .main_body .__vuescroll {
         height: auto!important;
+        min-height: 456px;
       }
     }
     .pagination {
@@ -612,14 +525,8 @@ export default {
         order: 10;
       }
     }
-    .card {
-      width: calc((100%/6) - 14px);
-    }
   }
   @media screen and (max-width: 960px) {
-    .card {
-      width: calc((100%/5) - 14px);
-    }
     .pagination {
       &_next, &_prev {
         width: 50%;
@@ -629,11 +536,6 @@ export default {
       }
     }
 
-  }
-  @media screen and (max-width: 767px) {
-    .card {
-      width: calc((100%/4) - 14px);
-    }
   }
   @media screen and (max-width: 680px) {
     .p_shop-left {
@@ -652,11 +554,6 @@ export default {
       }
     }
   }
-  @media screen and (max-width: 560px) {
-    .card {
-      width: calc((100%/3) - 14px);
-    }
-  }
   @media screen and (max-width: 480px) {
     .p_shop-left {
       .main_header {
@@ -669,9 +566,6 @@ export default {
         }
       }
     }
-    .card {
-      width: calc(100%/2 - 14px);
-    }
     .pagination {
       &_next, &_prev {
         width: 100%;
@@ -681,7 +575,6 @@ export default {
         order: 10;
       }
     }
-
   }
 </style>
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="order">
+  <div class="order" id="modalOrder">
     <div class="block">
       <div class="order_total container">
         <div class="image_wrapper">
@@ -36,7 +36,11 @@
           <span class="label">Статус трейда:</span>
           <span class="value waiting">Ожидает подтверждения...</span>
         </p>
-        <button class="btn btn-huge" type="button">ПРИНЯТЬ ТРЕЙД</button>
+        <button class="btn btn-huge" type="button"
+                onclick="document.querySelector('#modalOrder').classList.remove('active');
+                          document.querySelector('#modalNotification').classList.add('active');"
+                :getStartTimer="getStartTimer"
+        >ПРИНЯТЬ ТРЕЙД</button>
       </div>
     <div class="divider notch"></div>
     <div class="block order_extra">
@@ -59,7 +63,15 @@
   </div>
 </template>
 
-<script></script>
+<script>
+    export default {
+        data() {
+            return {
+                getStartTimer: true
+            }
+        }
+    }
+</script>
 
 <style lang="less">
   .order {
@@ -69,10 +81,12 @@
     overflow: hidden;
     width: 100%;
     max-width: 618px;
-    margin: auto;
+    margin: auto!important;
     max-height: 962px;
+    display: none;
     .block {
       border-radius: 0;
+      margin-bottom: 0!important;
       &:first-of-type {
         padding-top: 29px;
       }
@@ -244,6 +258,9 @@
           color: #5499e8;
         }
       }
+    }
+    &.active {
+      display: block;
     }
   }
   .divider {

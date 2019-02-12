@@ -53,6 +53,8 @@
                   </div>
                   <div class="description_wrapper">
                       <h3>Награда</h3>
+                      <p>Размер вознаграждения
+                          определяется при личной беседе</p>
                       <p class="btn-bright">лично</p>
                   </div>
               </div>

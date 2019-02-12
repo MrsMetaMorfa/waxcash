@@ -1,5 +1,6 @@
 <template>
   <div class="page">
+    <MobileNavigation :loggedIn="loggedIn" />
     <Header :loggedIn="loggedIn"/>
     <section class="p_container container container--justify">
       <div class="content_left">
@@ -13,26 +14,31 @@
         <AsideBonus/>
         <AsideNews/>
       </aside>
+      <Modals />
     </section>
   </div>
 </template>
 
 <script>
-  import Header from '~/components/Header.vue'
-  import AsideBonus from '~/components/AsideBonus.vue'
-  import AsideNews from '~/components/AsideNews.vue'
-  import WithdrowList from '~/components/WithdrowList.vue'
-  import MainLeft from '~/components/MainLeft.vue'
-  import MainRight from '~/components/MainRight.vue'
+  import MobileNavigation from '~/components/MobileNavigation'
+  import Header from '~/components/Header'
+  import AsideBonus from '~/components/AsideBonus'
+  import AsideNews from '~/components/AsideNews'
+  import WithdrowList from '~/components/WithdrowList'
+  import MainLeft from '~/components/MainLeft'
+  import MainRight from '~/components/MainRight'
+  import Modals from '~/components/Modals'
 
   export default {
     components: {
+      MobileNavigation,
       Header,
       AsideBonus,
       AsideNews,
       WithdrowList,
       MainLeft,
-      MainRight
+      MainRight,
+      Modals
     },
     data() {
       return {
@@ -83,16 +89,8 @@
       flex-direction: column;
     }
   }
-  @media screen and (max-width: 767px) {
-    .p_container {
-      margin-top: 132px;
-    }
-  }
-  @media screen and (max-width: 631px) {
-    .p_container {
-      margin-top: 0;
-    }
-  }
+  @media screen and (max-width: 767px) {}
+  @media screen and (max-width: 631px) {}
 </style>
 
 

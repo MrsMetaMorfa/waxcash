@@ -16,35 +16,34 @@
       <p>Система бонусов</p>
       <ul>
         <li class="container">
-          <img src="~assets/images/bonus-1.png" alt="Славный малый">
+          <img src="~assets/images/0.png" alt="Начинающий торгаш">
           <div class="bonus_description">
-            <p><strong>Славный малый</strong><br>
-            Необходимо совершить сделок на 100 USD. Размер скидки <span>1%</span></p>
+            <p><strong>Начинающий торгаш</strong>
+              <br>Размер скидки <span>0%</span></p>
           </div>
         </li>
         <li class="container">
-          <img src="~assets/images/bonus-2.png" alt="Славный малый">
+          <img src="~assets/images/1.png" alt="Юный трейдер">
           <div class="bonus_description">
-            <p><strong>Ликвидатор скинов</strong><br>
-            Необходимо совершить сделок на 200 USD. Размер скидки <span>2%</span></p>
+            <p><strong>Юный трейдер</strong>
+              <br>Размер скидки <span>0.5%</span></p>
           </div>
         </li>
         <li class="container">
-          <img src="~assets/images/bonus-3.png" alt="Славный малый">
+          <img src="~assets/images/2.png" alt="Цифровой барыга">
           <div class="bonus_description">
-            <p><strong>Скин дилер</strong><br>
-            Необходимо совершить сделок на 300 USD. Размер скидки <span>3%</span></p>
+            <p><strong>Цифровой барыга</strong>
+              <br>Размер скидки <span>1%</span></p>
           </div>
         </li>
         <li class="container">
-          <img src="~assets/images/bonus-4.png" alt="Славный малый">
+          <img src="~assets/images/3.png" alt="Прошареный парень">
           <div class="bonus_description">
-            <p><strong>Всемирная элита</strong><br>
-            Необходимо совершить сделок на 400 USD. Размер скидки <span>4%</span></p>
+            <p><strong>Прошареный парень</strong><br>Размер скидки <span>1.5%</span></p>
           </div>
         </li>
       </ul>
-      <button class="btn">ПОДРОБНЕЕ</button>
+      <nuxt-link class="btn" to="/accumulation">ПОДРОБНЕЕ</nuxt-link>
     </div>
   </div>
 </template>
@@ -129,13 +128,13 @@
       margin-bottom: 14px;
     }
     ul {
-      padding: 0 0 14px;
+      padding: 0;
       list-style-type: none;
-      width: calc(100% + 15px);
-      margin: 0 0 0 -15px;
+      width: 100%;
       li {
         align-items: center;
         text-align: left;
+        padding: 0 0 14px;
         p {
           font-size: 10px;
           margin-bottom: 0;
@@ -148,7 +147,8 @@
           }
         }
         img {
-          width: 70px;
+          width: 50px;
+          margin-right: 14px;
         }
       }
     }
@@ -157,7 +157,10 @@
       color: #737992;
       background: rgb(39, 41, 56);
       border-radius: 2px;
-      padding: 14px;
+      padding: 7px 14px;
+      text-decoration: none;
+      display: block;
+      font-weight: 700;
     }
   }
 

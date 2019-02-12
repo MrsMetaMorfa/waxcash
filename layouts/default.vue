@@ -242,12 +242,14 @@
   html {
     font-family: "SF UI Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     font-size: 16px;
+    line-height: 1.2;
     word-spacing: 1px;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     box-sizing: border-box;
+    overflow-x: hidden;
   }
   *, *:before, *:after {
     box-sizing: border-box;
@@ -264,11 +266,17 @@
     width: 100%;
     margin: -1px 0 0;
     padding: 1px 0 0;
-    min-height: 100vh;
+    height: 100vh;
     color: white;
     overflow-x: hidden;
   }
-
+  .page {
+    min-height: 100vh;
+    padding-top: 80px;
+  }
+  .translated {
+    transform: translateX(300px);
+  }
   .container {
     display: flex;
     &--justify {
@@ -285,14 +293,10 @@
     margin: 0;
     max-width: 100%;
   }
-  .wrapper {
-    max-width: 4096px;
-    margin: 0 auto;
-  }
   .p_container {
-    margin-top: 80px;
     min-height: calc(100vh - 80px);
     padding: 14px;
+    position: relative;
   }
   .block {
     border-radius: 2px;
@@ -349,63 +353,72 @@
       background: #16171F;
     }
   }
+  .btn-dark {
+    border-radius: 3px;
+    background-color: #272938;
+    padding: 8px 29px 6px;
+    height: auto;
+    &:hover, &:focus {
+      background: #5499E8;
+    }
+  }
   .form_line {
     width: 100%;
     label {
       display: block;
       margin-bottom: 14px;
     }
-    .input_wrapper {
-      position: relative;
-      margin-bottom: 14px;
-      &.correct {
-        input {
-          padding-right: 30px;
-          &:hover, &:focus {
-            border-color: rgb(56, 223, 90);
-            border-image: none;
-          }
-        }
-        &:after {
-          content: url("~assets/images/check.png");
-          display: block;
-          border-radius: 50%;
-          background-color: rgba(56, 223, 90, 0.15);
-          position: absolute;
-          width: 20px;
-          height: 20px;
-          color: rgb(56, 223, 90);
-          top: 50%;
-          margin-top: -10px;
-          right: 16px;
-          z-index: 1;
-          text-align: center;
+  }
+  .input_wrapper {
+    position: relative;
+    margin-bottom: 14px;
+    &.correct {
+      input {
+        padding-right: 30px;
+        &:hover, &:focus {
+          border-color: rgb(56, 223, 90);
+          border-image: none;
         }
       }
-      &.error {
-        input {
-          padding-right: 30px;
-          border-color: #e22e2f;
-          &:hover, &:focus {
-            border-image: none;
-            box-shadow: 0 0 0 2px #e22e2f;
-          }
+      &:after {
+        content: url("~assets/images/check.png");
+        display: block;
+        border-radius: 50%;
+        background-color: rgba(56, 223, 90, 0.15);
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        color: rgb(56, 223, 90);
+        top: 50%;
+        margin-top: -10px;
+        right: 16px;
+        z-index: 1;
+        text-align: center;
+      }
+    }
+    &.error {
+      input {
+        padding-right: 30px;
+        border-color: #e22e2f;
+        &:hover, &:focus {
+          border-image: none;
+          box-shadow: 0 0 0 2px #e22e2f;
         }
-        &:after {
-          content: url("~assets/images/wrong.png");
-          display: block;
-          border-radius: 50%;
-          background-color: rgba(182, 25, 27, 0.15);
-          position: absolute;
-          width: 20px;
-          height: 20px;
-          color: #e22e2f;
-          top: 50%;
-          margin-top: -10px;
-          right: 16px;
-          z-index: 1;
-          text-align: center;
-        }
+      }
+      &:after {
+        content: url("~assets/images/wrong.png");
+        display: block;
+        border-radius: 50%;
+        background-color: rgba(182, 25, 27, 0.15);
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        color: #e22e2f;
+        top: 50%;
+        margin-top: -10px;
+        right: 16px;
+        z-index: 1;
+        text-align: center;
       }
     }
     input, textarea, select {
@@ -428,5 +441,6 @@
       }
     }
   }
+
 </style>
 
